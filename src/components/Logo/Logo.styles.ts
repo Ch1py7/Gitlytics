@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Logo = styled.div`
+export const Logo = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;

@@ -3,7 +3,7 @@ import * as S from './SearchUser.styles'
 
 export const SearchUser: FC = (): ReactElement => {
   return (
-    <S.SearchUser>
+    <S.SearchUser id='analyze'>
       <S.SearchTitle className='md:text-6xl text-4xl text-center text-[#F3F3F3] font-bold'>
         Analyze your Github Profile!
       </S.SearchTitle>

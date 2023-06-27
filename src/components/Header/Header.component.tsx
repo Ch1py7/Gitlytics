@@ -16,10 +16,10 @@ export const Header: FC = (): ReactElement => {
           <Icon icon='carbon:play-filled' width={24} height={24} />
           Why Gitlytics
         </S.Button>
-        <S.Button>
+        <S.Anchor href='#analyze'>
           Get Analytics
           <Icon icon='formkit:arrowright' width={24} height={24} />
-        </S.Button>
+        </S.Anchor>
         <S.Button>
           Favorite
           <Icon icon='uil:cloud-heart' width={24} height={24} />

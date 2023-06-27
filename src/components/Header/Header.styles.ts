@@ -44,6 +44,26 @@ export const ButtonsContainer = styled.div`
   }
 `
 
+export const Anchor = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 1.6rem;
+  border: 1px solid #f3f3f3;
+  border-radius: 0.375rem;
+  background-color: transparent;
+  gap: 1.2rem;
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: #f3f3f3;
+  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    background: #f3f3f3;
+    color: #0a0a0a;
+  }
+`
+
 export const Button = styled.button`
   display: flex;
   justify-content: center;
@@ -57,6 +77,7 @@ export const Button = styled.button`
   font-size: 1.6rem;
   color: #f3f3f3;
   transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+  cursor: pointer;
   &:hover {
     background: #f3f3f3;
     color: #0a0a0a;
