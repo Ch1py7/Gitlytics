@@ -1,8 +1,8 @@
+import { UserCard } from 'components/UserCard'
 import { FC, ReactElement, useEffect, useState } from 'react'
 import { Data } from 'types'
 import { getApiData } from '../../graphql/client'
 import * as S from './GithubData.styles'
-import { UserCard } from 'components/UserCard'
 
 interface GithubDataProps {
   search: string
@@ -11,19 +11,19 @@ interface GithubDataProps {
 export const GithubData: FC<GithubDataProps> = ({ search }): ReactElement => {
   const [data, setData] = useState<Data | null>(null)
 
+  
   useEffect(() => {
-    async function fetchData() {
+    const fetchData = async () => {
       const { data } = await getApiData(search)
       setData(data)
     }
     fetchData()
   }, [search])
 
+  if (!data) return <S.GithubData />
   return (
     <S.GithubData>
-      {data?.user ? (
-        <UserCard data={data} search={search} />
-      ) : null}
+      <UserCard data={data} search={search} />
     </S.GithubData>
   )
 }

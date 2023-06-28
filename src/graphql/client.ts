@@ -12,7 +12,7 @@ export const client = new ApolloClient({
 })
 
 export const getApiData = async (username: string) => {
-  const { data, loading }: ApolloQueryResult<Data> = await client.query({
+  const { data }: ApolloQueryResult<Data> = await client.query({
     query: gql`
       {
         user(login: "${username}") {
@@ -110,5 +110,5 @@ export const getApiData = async (username: string) => {
     `,
   })
 
-  return { client, data, loading }
+  return { client, data }
 }

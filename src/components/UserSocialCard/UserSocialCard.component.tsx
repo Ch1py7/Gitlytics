@@ -30,7 +30,7 @@ export const UserSocialCard: FC<UserSocialCardProps> = ({ data }): ReactElement 
       ) : null}
       {data.user.socialAccounts.edges.map((social) => (
         <S.UserSocial key={social.node.provider}>
-          <Icon icon={`skill-icons:${social.node.provider.toLowerCase()}`} width={24} height={24} />
+          <Icon icon={`logos:${social.node.provider.toLowerCase()}`} width={24} height={24} />
           <S.UserSocialAnchor href={social.node.url} target='_blank' rel='noreferrer'>
             {social.node.displayName}
           </S.UserSocialAnchor>
