@@ -15,9 +15,10 @@ export const Button = styled.a`
   font-size: 1.6rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 
   &:hover {
     background-color: #202020;
+    scale: 1.1;
   }
 `

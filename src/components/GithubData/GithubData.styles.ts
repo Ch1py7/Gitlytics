@@ -5,4 +5,5 @@ export const GithubData = styled.section`
   justify-content: center;
   align-items: center;
   color: #efefef;
+  gap: 8.6rem;
 `

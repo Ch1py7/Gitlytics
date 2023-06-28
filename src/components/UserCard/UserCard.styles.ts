@@ -10,6 +10,7 @@ export const UserInformation = styled.div`
   max-width: 39rem;
   gap: 3.2rem;
   background-color: #151515;
+  border: 1px solid #9f9f9f;
   border-radius: 1.8rem;
   padding: 3.2rem;
 `

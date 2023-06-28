@@ -25,9 +25,9 @@ export interface User {
 export interface ContributionsCollection {
   contributionCalendar: ContributionCalendar
   contributionYears: number[]
-  firstIssueContribution: null
-  firstPullRequestContribution: FirstContribution
-  firstRepositoryContribution: FirstContribution
+  firstIssueContribution: firstIssueContribution
+  firstPullRequestContribution: firstPullRequestContribution
+  firstRepositoryContribution: firstRepositoryContribution
   totalCommitContributions: number
 }
 
@@ -75,15 +75,36 @@ export enum ContributionLevel {
   ThirdQuartile = 'THIRD_QUARTILE',
 }
 
-export interface FirstContribution {
+export interface firstRepositoryContribution {
   __typename: string
+  url: string
   occurredAt: Date
-  pullRequest?: PullRequest
-  repository?: PullRequest
+  repository: Repository
+}
+
+export interface firstPullRequestContribution {
+  __typename: string
+  url: string
+  occurredAt: Date
+  pullRequest: PullRequest
+}
+
+export interface firstIssueContribution {
+  __typename: string
+  url: string
+  occurredAt: Date
+  issue: Issue
+}
+
+export interface Repository {
   url: string
 }
 
 export interface PullRequest {
+  url: string
+}
+
+export interface Issue {
   url: string
 }
 
