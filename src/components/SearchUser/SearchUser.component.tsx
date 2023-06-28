@@ -1,19 +1,29 @@
-import { FC, ReactElement } from 'react'
+import { Dispatch, FC, ReactElement, useState } from 'react'
 import * as S from './SearchUser.styles'
 
-export const SearchUser: FC = (): ReactElement => {
+interface SearchUserProps {
+  setSearch: Dispatch<React.SetStateAction<string>>
+}
+
+export const SearchUser: FC<SearchUserProps> = ({ setSearch }): ReactElement => {
+  const [query, setQuery] = useState<string>('')
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    setSearch(query)
+  }
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setQuery(event.target.value)
+  }
+  
   return (
     <S.SearchUser id='analyze'>
       <S.SearchTitle className='md:text-6xl text-4xl text-center text-[#F3F3F3] font-bold'>
         Analyze your Github Profile!
       </S.SearchTitle>
-      <S.SearchForm>
-        <S.SearchInput
-          placeholder='Octocat'
-        />
-        <S.SearchButton>
-          Search
-        </S.SearchButton>
+      <S.SearchForm onSubmit={handleSubmit}>
+        <S.SearchInput placeholder='Octocat' onChange={handleChange}  />
+        <S.SearchButton>Search</S.SearchButton>
       </S.SearchForm>
     </S.SearchUser>
   )
