@@ -16,17 +16,18 @@ export interface User {
   location: string
   name: string
   repositories: Repositories
-  twitterUsername: null
+  socialAccounts: SocialAccounts
+  twitterUsername: string
   url: string
-  websiteUrl: null
+  websiteUrl: string
 }
 
 export interface ContributionsCollection {
   contributionCalendar: ContributionCalendar
   contributionYears: number[]
-  firstIssueContribution: FirstContribution
+  firstIssueContribution: null
   firstPullRequestContribution: FirstContribution
-  firstRepositoryContribution: null
+  firstRepositoryContribution: FirstContribution
   totalCommitContributions: number
 }
 
@@ -76,13 +77,13 @@ export enum ContributionLevel {
 
 export interface FirstContribution {
   __typename: string
-  issue?: Issue
   occurredAt: Date
-  pullRequest?: Issue
+  pullRequest?: PullRequest
+  repository?: PullRequest
   url: string
 }
 
-export interface Issue {
+export interface PullRequest {
   url: string
 }
 
@@ -97,15 +98,29 @@ export interface NodeElement {
 }
 
 export interface Languages {
-  edges: Edge[]
+  edges: LanguagesEdge[]
 }
 
-export interface Edge {
-  node: EdgeNode
+export interface LanguagesEdge {
+  node: PurpleNode
 }
 
-export interface EdgeNode {
+export interface PurpleNode {
   color: string
   id: string
   name: string
+}
+
+export interface SocialAccounts {
+  edges: SocialAccountsEdge[]
+}
+
+export interface SocialAccountsEdge {
+  node: FluffyNode
+}
+
+export interface FluffyNode {
+  displayName: string
+  provider: string
+  url: string
 }

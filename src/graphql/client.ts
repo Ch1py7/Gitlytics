@@ -17,7 +17,7 @@ export const getApiData = async (username: string) => {
       {
         user(login: "${username}") {
           id
-          avatarUrl(size: 10)
+          avatarUrl(size: 500)
           name
           url
           websiteUrl
@@ -93,6 +93,15 @@ export const getApiData = async (username: string) => {
                     name
                   }
                 }
+              }
+            }
+          }
+          socialAccounts(first: 10) {
+            edges {
+              node {
+                displayName
+                provider
+                url
               }
             }
           }
