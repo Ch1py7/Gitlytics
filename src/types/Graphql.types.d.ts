@@ -32,19 +32,11 @@ export interface ContributionsCollection {
 }
 
 export interface ContributionCalendar {
-  colors: Color[]
+  colors: string[]
   isHalloween: boolean
   months: Month[]
   totalContributions: number
   weeks: Week[]
-}
-
-export enum Color {
-  Ebedf0 = '#ebedf0',
-  The216E39 = '#216e39',
-  The30A14E = '#30a14e',
-  The40C463 = '#40c463',
-  The9Be9A8 = '#9be9a8',
 }
 
 export interface Month {
@@ -60,7 +52,7 @@ export interface Week {
 }
 
 export interface ContributionDay {
-  color: Color
+  color: string
   contributionCount: number
   contributionLevel: ContributionLevel
   date: Date

@@ -8,7 +8,7 @@ export const Header: FC = (): ReactElement => {
       <S.Title>
         Github <br /> Analytics
       </S.Title>
-      <S.Phrase className='text-[#919191] font-bold text-xl'>
+      <S.Phrase>
         The fastest way to see your statistics and curious graphs of Github.
       </S.Phrase>
       <S.ButtonsContainer>

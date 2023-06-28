@@ -18,7 +18,7 @@ export const SearchUser: FC<SearchUserProps> = ({ setSearch }): ReactElement => 
   
   return (
     <S.SearchUser id='analyze'>
-      <S.SearchTitle className='md:text-6xl text-4xl text-center text-[#F3F3F3] font-bold'>
+      <S.SearchTitle>
         Analyze your Github Profile!
       </S.SearchTitle>
       <S.SearchForm onSubmit={handleSubmit}>
