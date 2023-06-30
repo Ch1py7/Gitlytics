@@ -5,6 +5,8 @@ export const Footer = styled.footer`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 8rem;
+  border-top: 1px solid #828282;
 `
 
 export const FooterSection = styled.section`

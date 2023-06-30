@@ -1,18 +1,15 @@
 import styled from 'styled-components'
 
-export const UserCard = styled.div``
-
 export const UserInformation = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  max-width: 39rem;
   gap: 3.2rem;
-  background-color: #151515;
-  border: 1px solid #9f9f9f;
+  background-color: #181818;
+  border: 8px solid #828282;
   border-radius: 1.8rem;
-  padding: 3.2rem;
+  padding: 5.2rem;
 `
 
 export const UserDescription = styled.div`
@@ -24,9 +21,10 @@ export const UserDescription = styled.div`
 `
 
 export const UserImage = styled.img`
-  width: 32.6rem;
-  height: 32.6rem;
+  width: 29rem;
+  height: 29rem;
   border-radius: 50%;
+  border: 6px solid #c1c1c1;
 `
 
 export const UserName = styled.h1`
@@ -51,6 +49,7 @@ export const ButtonsContainer = styled.div`
 
 export const UserPhrase = styled.p`
   font-size: 2rem;
+  max-width: 29rem;
 `
 
 export const Separator = styled.div`
