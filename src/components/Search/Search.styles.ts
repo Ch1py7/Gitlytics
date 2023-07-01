@@ -6,8 +6,7 @@ export const Search = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: fit-content;
-  margin-left: 3rem;
+  margin: 0 1.4rem;
   padding: 4px 1.2rem 4px 2rem;
   gap: 2rem;
   border-left: 1px #c8c8c8 solid;

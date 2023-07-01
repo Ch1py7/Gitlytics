@@ -6,7 +6,7 @@ export const AdditionalOptions = styled.div`
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  @media (max-width: 768px) {
+  @media (max-width: 600px) {
     display: none;
   }
 `
@@ -14,7 +14,7 @@ export const AdditionalOptions = styled.div`
 export const SocialsContainer = styled.div`
   display: flex;
   gap: 2rem;
-  @media (max-width: 1280px) {
+  @media (max-width: 800px) {
     display: none;
   }
 `

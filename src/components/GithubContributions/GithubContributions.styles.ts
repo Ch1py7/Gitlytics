@@ -7,6 +7,11 @@ interface GithubContributionsProps {
 export const GithubContributions = styled.ul`
   display: flex;
   gap: 5px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
 `
 
 export const GithubSquareWeeks = styled.li`

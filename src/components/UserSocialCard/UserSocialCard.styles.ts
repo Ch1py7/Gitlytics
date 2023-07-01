@@ -20,5 +20,4 @@ export const UserSocial = styled.div`
 export const UserSocialAnchor = styled.a`
   font-size: 2rem;
   color: #efefef;
-  text-transform: capitalize;
 `

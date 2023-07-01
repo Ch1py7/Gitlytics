@@ -1,8 +1,13 @@
 import styled from 'styled-components'
 
 export const FirstContributionCards = styled.div`
-  display: flex;
-  gap: 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22.5rem, 1fr));
+  place-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-top: 2rem;
 `
 
 export const BugBounty = styled.div`

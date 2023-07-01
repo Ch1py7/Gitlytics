@@ -4,5 +4,9 @@ export const GithubData = styled.section`
   display: flex;
   justify-content: center;
   color: #efefef;
-  gap: 8.6rem;
+  gap: 6rem;
+
+  @media (max-width: 1620px) {
+    flex-direction: column;
+  }
 `
