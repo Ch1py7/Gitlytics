@@ -5,6 +5,7 @@ import { FC, ReactElement } from 'react'
 import { Data } from 'types'
 import { Queries } from '../../graphql/queries'
 import * as S from './GithubData.styles'
+import { Loader } from 'components/Loader'
 
 interface GithubDataProps {
   search: string
@@ -13,8 +14,8 @@ interface GithubDataProps {
 export const GithubData: FC<GithubDataProps> = ({ search }): ReactElement => {
   const { data, loading, error } = useGithubQuery<Data>(Queries.getApiData(search))
 
-  if (loading) return <S.GithubData>Loading...</S.GithubData> // TODO: Add loading component
-  if (error) return <S.GithubData>Error</S.GithubData> // TODO: Add error component
+  if (loading) return <Loader />
+  if (error) return <S.GithubData style={{fontSize: '3rem'}}>{error.message}</S.GithubData>
   if (!data) return <S.GithubData />
   return (
     <S.GithubData>
