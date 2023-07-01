@@ -18,7 +18,7 @@ export const App: FC = () => {
           transition: 'all 0.2s ease-in-out',
         }}
       >
-        <Navbar />
+        <Navbar setSearch={setSearch}/>
         <Header />
         <SearchUser setSearch={setSearch} />
         {search ? <GithubData search={search} /> : null}

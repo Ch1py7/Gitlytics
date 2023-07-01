@@ -14,6 +14,7 @@ export const SearchUser: FC<SearchUserProps> = ({ setSearch }): ReactElement => 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     setSearch(query)
+    setQuery('')
   }
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -24,7 +25,7 @@ export const SearchUser: FC<SearchUserProps> = ({ setSearch }): ReactElement => 
     <S.SearchUser id='analyze'>
       <S.SearchTitle lightMode={lightMode}>Analyze your Github Profile!</S.SearchTitle>
       <S.SearchForm onSubmit={handleSubmit} lightMode={lightMode}>
-        <S.SearchInput placeholder='Octocat' onChange={handleChange} lightMode={lightMode} />
+        <S.SearchInput value={query} placeholder='Octocat' onChange={handleChange} lightMode={lightMode} />
         <S.SearchButton lightMode={lightMode}>Search</S.SearchButton>
       </S.SearchForm>
     </S.SearchUser>
