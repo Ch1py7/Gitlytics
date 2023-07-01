@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+interface LightMode {
+  lightMode: boolean
+}
+
 export const SearchUser = styled.main`
   display: flex;
   flex-direction: column;
@@ -10,26 +14,26 @@ export const SearchUser = styled.main`
   gap: 4rem;
 `
 
-export const SearchTitle = styled.h2`
+export const SearchTitle = styled.h2<LightMode>`
   font-size: 6rem;
   font-weight: 700;
   line-height: 1;
   text-align: center;
-  color: #f3f3f3;
+  color: ${({ lightMode }) => (lightMode ? '#0a0a0a' : '#f3f3f3')};
   @media (max-width: 768px) {
     font-size: 3.6rem;
     line-height: 4rem;
   }
 `
 
-export const SearchForm = styled.form`
+export const SearchForm = styled.form<LightMode>`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 40%;
   padding: 8px;
   border-radius: 6px;
-  background: #2b2b2b;
+  background: ${({ lightMode }) => (lightMode ? '#efefef' : '#2b2b2b')};
   @media (max-width: 768px) {
     width: 90%;
   }
@@ -41,32 +45,32 @@ export const SearchForm = styled.form`
   }
 `
 
-export const SearchInput = styled.input`
+export const SearchInput = styled.input<LightMode>`
   width: 100%;
   padding: 0 1.2rem;
   border: none;
   background-color: transparent;
   font-size: 3rem;
-  color: #f3f3f3;
+  color: ${({ lightMode }) => (lightMode ? '#0a0a0a' : '#f3f3f3')};
   line-height: 3.6rem;
   outline: 0;
 `
 
-export const SearchButton = styled.button`
+export const SearchButton = styled.button<LightMode>`
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px 16px;
   gap: 1.2px;
-  border: 1px solid #f3f3f3;
+  border: ${({ lightMode }) => (lightMode ? '1px solid #0a0a0a' : '1px solid #f3f3f3')};
   border-radius: 6px;
   background: transparent;
   font-weight: 600;
-  color: #f3f3f3;
-  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+  color: ${({ lightMode }) => (lightMode ? '#0a0a0a' : '#f3f3f3')};
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
   &:hover {
-    background: #f3f3f3;
-    color: #0a0a0a;
+    background: ${({ lightMode }) => (lightMode ? '#0a0a0a' : '#f3f3f3')};
+    color: ${({ lightMode }) => (lightMode ? '#f3f3f3' : '#0a0a0a')};
   }
 `

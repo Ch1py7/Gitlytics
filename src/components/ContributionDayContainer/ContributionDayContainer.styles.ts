@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
-export const ContributionDayContainer = styled.div`
+interface LightMode {
+  lightMode: boolean
+}
+
+export const ContributionDayContainer = styled.div<LightMode>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,7 +13,7 @@ export const ContributionDayContainer = styled.div`
   height: 9rem;
   gap: 5px;
   padding: 0 2rem;
-  background-color: #1e1e1e;
+  background: ${({ lightMode }) => (lightMode ? '#dfdfdf' : '#1e1e1e')};
   border: 1px solid #8e8e8e;
   border-radius: 1.8rem;
 `
@@ -22,7 +26,8 @@ export const ContributionDay = styled.article`
   gap: 4rem;
 `
 
-export const ContributionDayText = styled.p`
+export const ContributionDayText = styled.p<LightMode>`
+  color: ${({ lightMode }) => (lightMode ? '#202020' : '#e9e9e9')};
   font-size: 1.6rem;
   font-weight: 600;
 `

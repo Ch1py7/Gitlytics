@@ -13,7 +13,7 @@ export const ToggleSwitch = styled.button<ToogleSwitchProps>`
   height: 2.4rem;
   border: none;
   border-radius: 1.2rem;
-  background-color: ${({ isActive }) => (isActive ? '#2D2D2D' : '#bbbbbb')};
+  background-color: ${({ isActive }) => (isActive ? '#bbbbbb' : '#2D2D2D')};
   cursor: pointer;
 `
 

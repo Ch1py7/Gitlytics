@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+interface LightMode {
+  lightMode: boolean
+}
+
 export const RightSideStats = styled.div`
   display: flex;
   flex-direction: column;
@@ -10,11 +14,11 @@ export const RightSideStats = styled.div`
   gap: 3rem;
 `
 
-export const Input = styled.input`
+export const Input = styled.input<LightMode>`
   width: 90%;
   height: 5rem;
   border-radius: 1rem;
-  background-color: #1e1e1e;
+  background-color: ${({ lightMode }) => (lightMode ? '#dfdfdf' : '#1e1e1e')};
   border: 1px solid #8e8e8e;
 `
 

@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+interface LightMode {
+  lightMode: boolean
+}
+
 export const UserSocialCard = styled.div`
   display: flex;
   flex-direction: column;
@@ -17,7 +21,7 @@ export const UserSocial = styled.div`
   gap: 1rem;
 `
 
-export const UserSocialAnchor = styled.a`
+export const UserSocialAnchor = styled.a<LightMode>`
   font-size: 2rem;
-  color: #efefef;
+  color: ${({ lightMode }) => (lightMode ? '#161616' : '#efefef')};
 `

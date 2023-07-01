@@ -1,6 +1,10 @@
 import { Icon } from '@iconify/react'
 import styled from 'styled-components'
 
+interface LightMode {
+  lightMode: boolean
+}
+
 export const Search = styled.div`
   position: relative;
   display: flex;
@@ -20,13 +24,17 @@ export const Search = styled.div`
   }
 `
 
-export const SearchInput = styled.input`
+export const SearchInput = styled.input<LightMode>`
   width: 100%;
+  height: 100%;
+  padding: 0 12rem 0 2rem;
   border: none;
-  background-color: transparent;
+  border-radius: 6px;
+  background: ${({ lightMode }) => (lightMode ? '#efefef' : '#2b2b2b')};
   font-size: 1.6rem;
   color: #f3f3f3;
   outline: none;
+  transition: all 0.2s ease-in-out;
 `
 
 export const SearchIcon = styled(Icon)`
@@ -41,10 +49,10 @@ export const SearchIcon = styled(Icon)`
   }
 `
 
-export const SearchButton = styled.button`
+export const SearchButton = styled.button<LightMode>`
   position: absolute;
   top: 50%;
-  right: 2.5rem;
+  right: 3.4rem;
   transform: translateY(-50%);
   display: block;
   margin: auto 0;
@@ -53,8 +61,9 @@ export const SearchButton = styled.button`
   border-radius: 6px;
   background-color: transparent;
   font-size: 1.2rem;
-  color: #c8c8c8;
+  color: ${({ lightMode }) => (lightMode ? '#2b2b2b' : '#c8c8c8')};
   line-height: 1rem;
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
   @media (max-width: 768px) {
     display: none;

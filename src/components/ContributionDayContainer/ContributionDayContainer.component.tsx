@@ -1,5 +1,6 @@
 import { Icon } from '@iconify/react'
-import { FC, ReactElement } from 'react'
+import { LightModeContext } from 'context'
+import { FC, ReactElement, useContext } from 'react'
 import { Data } from 'types'
 import { days } from 'utils'
 import * as S from './ContributionDayContainer.styles'
@@ -8,7 +9,10 @@ interface ContributionDayContainerProps {
   data: Data
 }
 
-export const ContributionDayContainer: FC<ContributionDayContainerProps> = ({ data }): ReactElement => {
+export const ContributionDayContainer: FC<ContributionDayContainerProps> = ({
+  data,
+}): ReactElement => {
+  const { lightMode } = useContext(LightModeContext)
   const weeks = data.user.contributionsCollection.contributionCalendar.weeks.map((week) =>
     week.contributionDays.map((day) => day.contributionCount)
   )
@@ -26,33 +30,47 @@ export const ContributionDayContainer: FC<ContributionDayContainerProps> = ({ da
   const minContributionDay = contributionsPerDayOfTheWeek.indexOf(minContribution)
 
   return (
-    <S.ContributionDayContainer>
+    <S.ContributionDayContainer lightMode={lightMode}>
       <S.ContributionDay>
         <div
           style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem' }}
         >
-          <Icon icon='solar:graph-new-up-broken' height={16} width={16} color='gold' />
-          <S.ContributionDayText>Most commited day</S.ContributionDayText>
+          <Icon
+            icon='solar:graph-new-up-broken'
+            height={16}
+            width={16}
+            color={lightMode ? '#ff0099' : 'gold'}
+          />
+          <S.ContributionDayText lightMode={lightMode}>Most commited day</S.ContributionDayText>
         </div>
         <div
           style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '2rem' }}
         >
-          <S.ContributionDayText>{days[maxContributionDay]}</S.ContributionDayText>
-          <S.ContributionDayText>{maxContribution}</S.ContributionDayText>
+          <S.ContributionDayText lightMode={lightMode}>
+            {days[maxContributionDay]}
+          </S.ContributionDayText>
+          <S.ContributionDayText lightMode={lightMode}>{maxContribution}</S.ContributionDayText>
         </div>
       </S.ContributionDay>
       <S.ContributionDay>
         <div
           style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem' }}
         >
-          <Icon icon='solar:graph-down-new-broken' height={16} width={16} color='gold' />
-          <S.ContributionDayText>Worst commited day</S.ContributionDayText>
+          <Icon
+            icon='solar:graph-down-new-broken'
+            height={16}
+            width={16}
+            color={lightMode ? '#ff0099' : 'gold'}
+          />
+          <S.ContributionDayText lightMode={lightMode}>Worst commited day</S.ContributionDayText>
         </div>
         <div
           style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '2rem' }}
         >
-          <S.ContributionDayText>{days[minContributionDay]}</S.ContributionDayText>
-          <S.ContributionDayText>{minContribution}</S.ContributionDayText>
+          <S.ContributionDayText lightMode={lightMode}>
+            {days[minContributionDay]}
+          </S.ContributionDayText>
+          <S.ContributionDayText lightMode={lightMode}>{minContribution}</S.ContributionDayText>
         </div>
       </S.ContributionDay>
     </S.ContributionDayContainer>

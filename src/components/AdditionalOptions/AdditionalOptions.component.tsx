@@ -8,7 +8,7 @@ export const AdditionalOptions: FC = (): ReactElement => {
       <S.AdditionalOptions>
         <ToggleSwitch />
         <S.SocialsContainer>
-          <a href='https://github.com/Afordin' target='_blank' rel='noreferrer'>
+          <a href='https://github.com/Ch1py7' target='_blank' rel='noreferrer'>
             <S.Socials icon='mdi:github' />
           </a>
           <a href='https://discord.gg/p9u5yMRhYN' target='_blank' rel='noreferrer'>

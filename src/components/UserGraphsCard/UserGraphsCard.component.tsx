@@ -4,6 +4,8 @@ import { StatsContainer } from 'components/StatsContainer'
 import { FC, ReactElement } from 'react'
 import { Data } from 'types'
 import * as S from './UserGraphsCard.styles'
+import { useContext } from 'react'
+import { LightModeContext } from 'context'
 
 interface UserGraphsCardProps {
   data: Data
@@ -11,8 +13,10 @@ interface UserGraphsCardProps {
 }
 
 export const UserGraphsCard: FC<UserGraphsCardProps> = ({ data, search }): ReactElement => {
+  const { lightMode } = useContext(LightModeContext)
+
   return (
-    <S.UserGraphsCard>
+    <S.UserGraphsCard lightMode={lightMode}>
       <FirstContributionCards data={data} />
       <GithubContributions data={data} />
       <StatsContainer data={data} user={search} />

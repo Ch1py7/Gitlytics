@@ -1,4 +1,5 @@
-import { FC, ReactElement } from 'react'
+import { LightModeContext } from 'context'
+import { FC, ReactElement, useContext } from 'react'
 import * as S from './LeftSideStats.styles'
 
 interface LeftSideStatsProps {
@@ -6,11 +7,15 @@ interface LeftSideStatsProps {
 }
 
 export const LeftSideStats: FC<LeftSideStatsProps> = ({ user }): ReactElement => {
+  const { lightMode } = useContext(LightModeContext)
+
   return (
     <S.LeftSideStats>
-      <S.Title>Check your stats!</S.Title>
+      <S.Title lightMode={lightMode}>Check your stats!</S.Title>
       <S.Stats
-        src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${user}&theme=radical&layout=compact&langs_count=10`}
+        src={`https://github-readme-stats.vercel.app/api?username=${user}&theme=${
+          lightMode ? 'default' : 'radical'
+        }&show=reviews,discussions_started,discussions_answered`}
         alt='stats'
       />
     </S.LeftSideStats>
