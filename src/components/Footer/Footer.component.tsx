@@ -1,6 +1,6 @@
+import { Logo } from 'components/Logo'
 import { FC, ReactElement } from 'react'
 import * as S from './Footer.styles'
-import { Logo } from 'components/Logo'
 
 export const Footer: FC = (): ReactElement => {
   return (
@@ -8,7 +8,7 @@ export const Footer: FC = (): ReactElement => {
       <S.FooterSection>
         <Logo />
         <S.FooterSmall>
-          Copyright © 2023 Gitlytics, Inc. All rights reserved.
+          Made with <S.Heart icon='ph:heart-fill' /> by Afordin
         </S.FooterSmall>
       </S.FooterSection>
     </S.Footer>
