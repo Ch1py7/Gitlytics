@@ -15,14 +15,12 @@ export const SearchUser: FC<SearchUserProps> = ({ setSearch }): ReactElement => 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value)
   }
-  
+
   return (
     <S.SearchUser id='analyze'>
-      <S.SearchTitle>
-        Analyze your Github Profile!
-      </S.SearchTitle>
+      <S.SearchTitle>Analyze your Github Profile!</S.SearchTitle>
       <S.SearchForm onSubmit={handleSubmit}>
-        <S.SearchInput placeholder='Octocat' onChange={handleChange}  />
+        <S.SearchInput placeholder='Octocat' onChange={handleChange} />
         <S.SearchButton>Search</S.SearchButton>
       </S.SearchForm>
     </S.SearchUser>

@@ -22,5 +22,3 @@ export const LogoTitle = styled.h1`
     display: none;
   }
 `
-
-

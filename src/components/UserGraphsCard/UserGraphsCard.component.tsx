@@ -1,9 +1,9 @@
-import { FC, ReactElement } from 'react'
-import { Data } from 'types'
-import * as S from './UserGraphsCard.styles'
 import { FirstContributionCards } from 'components/FirstContributionCards'
 import { GithubContributions } from 'components/GithubContributions'
 import { StatsContainer } from 'components/StatsContainer'
+import { FC, ReactElement } from 'react'
+import { Data } from 'types'
+import * as S from './UserGraphsCard.styles'
 
 interface UserGraphsCardProps {
   data: Data

@@ -48,4 +48,3 @@ export const FirstOf = styled.a`
     scale: 1.1;
   }
 `
-

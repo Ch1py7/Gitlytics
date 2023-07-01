@@ -1,8 +1,8 @@
-import { FC, ReactElement } from 'react'
-import * as S from './ContributionDayContainer.styles'
 import { Icon } from '@iconify/react'
+import { FC, ReactElement } from 'react'
 import { Data } from 'types'
 import { days } from 'utils'
+import * as S from './ContributionDayContainer.styles'
 
 interface ContributionDayContainerProps {
   data: Data

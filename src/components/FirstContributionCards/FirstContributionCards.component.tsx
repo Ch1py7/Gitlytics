@@ -1,7 +1,7 @@
-import { FC, ReactElement } from 'react'
-import * as S from './FirstContributionCards.styles'
 import { Icon } from '@iconify/react'
+import { FC, ReactElement } from 'react'
 import { Data } from 'types'
+import * as S from './FirstContributionCards.styles'
 
 interface FirstContributionCardsProps {
   data: Data

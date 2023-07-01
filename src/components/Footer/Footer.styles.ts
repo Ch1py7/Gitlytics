@@ -1,5 +1,5 @@
-import styled from 'styled-components'
 import { Icon } from '@iconify/react'
+import styled from 'styled-components'
 
 export const Footer = styled.footer`
   display: flex;

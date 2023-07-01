@@ -1,5 +1,5 @@
-import styled from 'styled-components'
 import { Icon } from '@iconify/react'
+import styled from 'styled-components'
 
 export const AdditionalOptions = styled.div`
   display: flex;
@@ -35,17 +35,17 @@ export const Mobile = styled.div`
 
 export const Language = styled(Icon)`
   font-size: 3rem;
-  color: #C8C8C8;
+  color: #c8c8c8;
   cursor: pointer;
 `
 
 export const Socials = styled(Icon)`
   font-size: 3rem;
-  color: #C8C8C8;
+  color: #c8c8c8;
   cursor: pointer;
 `
 
 export const BurgerMenu = styled(Icon)`
   font-size: 3rem;
-  color: #C8C8C8;
+  color: #c8c8c8;
 `

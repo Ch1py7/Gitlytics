@@ -8,9 +8,7 @@ export const Header: FC = (): ReactElement => {
       <S.Title>
         Github <br /> Analytics
       </S.Title>
-      <S.Phrase>
-        The fastest way to see your statistics and curious graphs of Github.
-      </S.Phrase>
+      <S.Phrase>The fastest way to see your statistics and curious graphs of Github.</S.Phrase>
       <S.ButtonsContainer>
         <S.Button>
           <Icon icon='carbon:play-filled' width={24} height={24} />

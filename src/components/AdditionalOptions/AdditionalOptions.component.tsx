@@ -1,6 +1,6 @@
+import { ToggleSwitch } from 'components/ToggleSwitch'
 import { FC, ReactElement } from 'react'
 import * as S from './AdditionalOptions.styles'
-import { ToggleSwitch } from 'components/ToggleSwitch'
 
 export const AdditionalOptions: FC = (): ReactElement => {
   return (
