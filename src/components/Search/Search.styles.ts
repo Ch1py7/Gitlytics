@@ -21,6 +21,7 @@ export const Search = styled.div`
 `
 
 export const SearchInput = styled.input`
+  width: 100%;
   border: none;
   background-color: transparent;
   font-size: 1.6rem;

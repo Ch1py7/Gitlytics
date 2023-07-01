@@ -1,9 +1,8 @@
 import styled from 'styled-components'
 
 export const Navbar = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
   padding: 3.2rem 3.6rem;
   background: #212121;
 
