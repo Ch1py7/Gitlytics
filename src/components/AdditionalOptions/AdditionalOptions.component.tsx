@@ -6,14 +6,14 @@ export const AdditionalOptions: FC = (): ReactElement => {
   return (
     <>
       <S.AdditionalOptions>
-        <S.LanguageContainer>
-          <S.Language icon='mdi:language' />
-        </S.LanguageContainer>
         <ToggleSwitch />
         <S.SocialsContainer>
-          <S.Socials icon='mdi:github' />
-          <S.Socials icon='ri:twitter-fill' />
-          <S.Socials icon='ic:baseline-discord' />
+          <a href='https://github.com/Afordin' target='_blank' rel='noreferrer'>
+            <S.Socials icon='mdi:github' />
+          </a>
+          <a href='https://discord.gg/p9u5yMRhYN' target='_blank' rel='noreferrer'>
+            <S.Socials icon='ic:baseline-discord' />
+          </a>
         </S.SocialsContainer>
       </S.AdditionalOptions>
       <S.Mobile>
