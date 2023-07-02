@@ -71,23 +71,3 @@ export const Anchor = styled.a<LightMode>`
     color: ${({ lightMode }) => (lightMode ? '#f3f3f3' : '#0a0a0a')};
   }
 `
-
-export const Button = styled.button<LightMode>`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 8px 1.6rem;
-  border: ${({ lightMode }) => (lightMode ? '1px solid #0a0a0a' : '1px solid #f3f3f3')};
-  border-radius: 0.375rem;
-  background-color: transparent;
-  gap: 1.2rem;
-  font-weight: 600;
-  font-size: 1.6rem;
-  color: ${({ lightMode }) => (lightMode ? '#0a0a0a' : '#f3f3f3')};
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-  &:hover {
-    background: ${({ lightMode }) => (lightMode ? '#0a0a0a' : '#f3f3f3')};
-    color: ${({ lightMode }) => (lightMode ? '#f3f3f3' : '#0a0a0a')};
-  }
-`

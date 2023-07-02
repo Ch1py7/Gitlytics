@@ -11,6 +11,7 @@ export const ContributionDayContainer = styled.div<LightMode>`
   align-items: flex-start;
   width: 90%;
   height: 9rem;
+  margin-top: 1rem;
   gap: 5px;
   padding: 0 2rem;
   background: ${({ lightMode }) => (lightMode ? '#dfdfdf' : '#1e1e1e')};

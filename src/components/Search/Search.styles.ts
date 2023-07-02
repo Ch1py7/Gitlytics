@@ -27,12 +27,13 @@ export const Search = styled.div`
 export const SearchInput = styled.input<LightMode>`
   width: 100%;
   height: 100%;
-  padding: 0 12rem 0 2rem;
+  padding: 0 2rem 0 2rem;
   border: none;
   border-radius: 6px;
   background: ${({ lightMode }) => (lightMode ? '#efefef' : '#2b2b2b')};
   font-size: 1.6rem;
-  color: #f3f3f3;
+  font-weight: 400;
+  color: ${({ lightMode }) => (lightMode ? '#1e1e1e' : '#f3f3f3')};
   outline: none;
   transition: all 0.2s ease-in-out;
 `

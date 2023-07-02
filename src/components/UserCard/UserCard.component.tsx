@@ -29,7 +29,6 @@ export const UserCard: FC<UserCardProps> = ({ data, search }): ReactElement => {
             color={`${lightMode ? '#1e1e1e' : '#efefef'}`}
             text='Github'
           />
-          <Button where={data.user.url} icon='mdi:heart' color='#BB2929' text='Favorite' />
         </S.ButtonsContainer>
         {data.user.bio ? <S.UserPhrase>{data.user.bio}</S.UserPhrase> : null}
       </S.UserDescription>

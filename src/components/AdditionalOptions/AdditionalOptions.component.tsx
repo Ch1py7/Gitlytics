@@ -11,8 +11,8 @@ export const AdditionalOptions: FC = (): ReactElement => {
           <a href='https://github.com/Ch1py7' target='_blank' rel='noreferrer'>
             <S.Socials icon='mdi:github' />
           </a>
-          <a href='https://discord.gg/p9u5yMRhYN' target='_blank' rel='noreferrer'>
-            <S.Socials icon='ic:baseline-discord' />
+          <a href='https://www.linkedin.com/in/gerardo-bulbsum/' target='_blank' rel='noreferrer'>
+            <S.Socials icon='bi:linkedin' />
           </a>
         </S.SocialsContainer>
       </S.AdditionalOptions>

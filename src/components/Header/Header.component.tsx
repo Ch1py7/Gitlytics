@@ -13,18 +13,10 @@ export const Header: FC = (): ReactElement => {
       </S.Title>
       <S.Phrase lightMode={lightMode}>The fastest way to see your statistics and curious graphs of Github.</S.Phrase>
       <S.ButtonsContainer>
-        <S.Button lightMode={lightMode}>
-          <Icon icon='carbon:play-filled' width={24} height={24} />
-          Why Gitlytics
-        </S.Button>
         <S.Anchor href='#analyze' lightMode={lightMode}>
           Get Analytics
           <Icon icon='formkit:arrowright' width={24} height={24} />
         </S.Anchor>
-        <S.Button lightMode={lightMode}>
-          Favorite
-          <Icon icon='uil:cloud-heart' width={24} height={24} />
-        </S.Button>
       </S.ButtonsContainer>
     </S.Header>
   )
