@@ -1,19 +1,19 @@
+import { ToggleSwitch } from 'components/ToggleSwitch'
 import { FC, ReactElement } from 'react'
 import * as S from './AdditionalOptions.styles'
-import { ToggleSwitch } from 'components/ToggleSwitch'
 
 export const AdditionalOptions: FC = (): ReactElement => {
   return (
     <>
       <S.AdditionalOptions>
-        <S.LanguageContainer>
-          <S.Language icon='mdi:language' />
-        </S.LanguageContainer>
         <ToggleSwitch />
         <S.SocialsContainer>
-          <S.Socials icon='mdi:github' />
-          <S.Socials icon='ri:twitter-fill' />
-          <S.Socials icon='ic:baseline-discord' />
+          <a href='https://github.com/Ch1py7' target='_blank' rel='noreferrer'>
+            <S.Socials icon='mdi:github' />
+          </a>
+          <a href='https://www.linkedin.com/in/gerardo-bulbsum/' target='_blank' rel='noreferrer'>
+            <S.Socials icon='bi:linkedin' />
+          </a>
         </S.SocialsContainer>
       </S.AdditionalOptions>
       <S.Mobile>

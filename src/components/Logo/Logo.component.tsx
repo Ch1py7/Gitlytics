@@ -1,9 +1,14 @@
-import { FC, ReactElement } from 'react'
+import { FC, ReactElement, useContext } from 'react'
 import * as S from './Logo.styles'
+import { LightModeContext } from 'context'
 
 export const Logo: FC = (): ReactElement => {
-  return <S.Logo>
-    <S.LogoImg src='/logo.png' />
-    <S.LogoTitle>Gitlytics</S.LogoTitle>
-  </S.Logo>
+  const { lightMode } = useContext(LightModeContext)
+
+  return (
+    <S.Logo href='/'>
+      <S.LogoImg src='/logo.png' alt='logo' lightMode={lightMode} />
+      <S.LogoTitle lightMode={lightMode}>Gitlytics</S.LogoTitle>
+    </S.Logo>
+  )
 }

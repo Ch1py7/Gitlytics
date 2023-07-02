@@ -1,19 +1,32 @@
-import { FC, ReactElement } from 'react'
+import { Dispatch, FC, ReactElement, useState } from 'react'
 import * as S from './SearchUser.styles'
+import { useContext } from 'react'
+import { LightModeContext } from 'context'
 
-export const SearchUser: FC = (): ReactElement => {
+interface SearchUserProps {
+  setSearch: Dispatch<React.SetStateAction<string>>
+}
+
+export const SearchUser: FC<SearchUserProps> = ({ setSearch }): ReactElement => {
+  const [query, setQuery] = useState<string>('')
+  const { lightMode } = useContext(LightModeContext)
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    setSearch(query)
+    setQuery('')
+  }
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setQuery(event.target.value)
+  }
+
   return (
-    <S.SearchUser>
-      <S.SearchTitle className='md:text-6xl text-4xl text-center text-[#F3F3F3] font-bold'>
-        Analyze your Github Profile!
-      </S.SearchTitle>
-      <S.SearchForm>
-        <S.SearchInput
-          placeholder='Octocat'
-        />
-        <S.SearchButton>
-          Search
-        </S.SearchButton>
+    <S.SearchUser id='analyze'>
+      <S.SearchTitle lightMode={lightMode}>Analyze your Github Profile!</S.SearchTitle>
+      <S.SearchForm onSubmit={handleSubmit} lightMode={lightMode}>
+        <S.SearchInput value={query} placeholder='Octocat' onChange={handleChange} lightMode={lightMode} />
+        <S.SearchButton lightMode={lightMode}>Search</S.SearchButton>
       </S.SearchForm>
     </S.SearchUser>
   )
