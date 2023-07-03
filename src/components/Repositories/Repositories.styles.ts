@@ -22,7 +22,7 @@ export const RepositoriesContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  height: 30rem;
+  height: 31.4rem;
   gap: 2rem;
 `
 
@@ -31,9 +31,9 @@ export const Repository = styled.article<LightMode>`
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+  border: 2px solid #b7b7b7;
   border-radius: 1rem;
-  background-color: ${({ lightMode }) => (lightMode ? '#efefef' : '#2b2b2b')};
-  box-shadow: 0 0 0.5rem 0.1rem rgba(0, 0, 0, 0.2);
+  background-color: ${({ lightMode }) => (lightMode ? '#efefef' : '#141321')};
   transition: all 0.2s ease-in-out;
   &:hover {
     transform: scale(1.02);
@@ -42,7 +42,7 @@ export const Repository = styled.article<LightMode>`
 
 export const RepositoryTitle = styled.h3<LightMode>`
   display: -webkit-box;
-  color: ${({ lightMode }) => (lightMode ? '#161616' : '#efefef')};
+  color: ${({ lightMode }) => (lightMode ? '#161616' : '#a9fef7')};
   font-size: 2rem;
   font-weight: 700;
   overflow: hidden;

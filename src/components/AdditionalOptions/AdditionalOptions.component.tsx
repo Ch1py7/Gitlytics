@@ -9,10 +9,10 @@ export const AdditionalOptions: FC = (): ReactElement => {
         <ToggleSwitch />
         <S.SocialsContainer>
           <a href='https://github.com/Ch1py7' target='_blank' rel='noreferrer'>
-            <S.Socials icon='mdi:github' />
+            <S.Socials icon='mdi:github' height={26} width={26} />
           </a>
           <a href='https://www.linkedin.com/in/gerardo-bulbsum/' target='_blank' rel='noreferrer'>
-            <S.Socials icon='bi:linkedin' />
+            <S.Socials icon='bi:linkedin' height={22} width={22} />
           </a>
         </S.SocialsContainer>
       </S.AdditionalOptions>

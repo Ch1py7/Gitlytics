@@ -11,7 +11,7 @@ export const UserInformation = styled.div<LightMode>`
   flex-direction: column;
   gap: 3.2rem;
   background-color: ${({ lightMode }) => (lightMode ? '#eaeaea' : '#181818')};
-  border: 8px solid #828282;
+  border: 4px solid #828282;
   border-radius: 1.8rem;
   padding: 5.2rem;
   transition: all 0.2s ease-in-out;
@@ -29,7 +29,7 @@ export const UserImage = styled.img<LightMode>`
   width: 29rem;
   height: 29rem;
   border-radius: 50%;
-  border: ${({ lightMode }) => (lightMode ? '6px solid #181818' : '6px solid #c1c1c1')};
+  border: ${({ lightMode }) => (lightMode ? '2px solid #828282' : '2px solid #c1c1c1')};
   transition: all 0.2s ease-in-out;
 `
 

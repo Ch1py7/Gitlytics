@@ -13,6 +13,8 @@ export const AdditionalOptions = styled.div`
 
 export const SocialsContainer = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 2rem;
   @media (max-width: 600px) {
     display: none;
@@ -27,7 +29,6 @@ export const Mobile = styled.div`
 `
 
 export const Socials = styled(Icon)`
-  font-size: 3rem;
   color: #c8c8c8;
   cursor: pointer;
 `

@@ -31,7 +31,6 @@ export const SearchForm = styled.form<LightMode>`
   justify-content: center;
   align-items: center;
   width: 40%;
-  padding: 8px;
   border-radius: 6px;
   background: ${({ lightMode }) => (lightMode ? '#efefef' : '#2b2b2b')};
   @media (max-width: 768px) {
@@ -47,10 +46,11 @@ export const SearchForm = styled.form<LightMode>`
 
 export const SearchInput = styled.input<LightMode>`
   width: 100%;
+  height: 4rem;
   padding: 0 1.2rem;
   border: none;
   background-color: transparent;
-  font-size: 3rem;
+  font-size: 1.6rem;
   color: ${({ lightMode }) => (lightMode ? '#0a0a0a' : '#f3f3f3')};
   line-height: 3.6rem;
   outline: 0;
@@ -60,7 +60,7 @@ export const SearchButton = styled.button<LightMode>`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 16px;
+  padding: 1rem 1.4rem;
   gap: 1.2px;
   border: ${({ lightMode }) => (lightMode ? '1px solid #0a0a0a' : '1px solid #f3f3f3')};
   border-radius: 6px;

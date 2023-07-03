@@ -10,7 +10,6 @@ export const FirstContributionCards = styled.div`
   place-items: center;
   gap: 2rem;
   margin-top: 2rem;
-  margin-bottom: 2rem;
   padding-top: 2rem;
 `
 

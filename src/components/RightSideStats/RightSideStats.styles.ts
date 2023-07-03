@@ -17,11 +17,11 @@ export const Input = styled.input<LightMode>`
   width: 90%;
   height: 5rem;
   padding: 0 2rem;
-  color: ${({ lightMode }) => (lightMode ? '#1e1e1e' : '#f3f3f3')};
+  color: ${({ lightMode }) => (lightMode ? '#1e1e1e' : '#a9fef7')};
   outline: none;
-  border-radius: 1rem;
-  background-color: ${({ lightMode }) => (lightMode ? '#dfdfdf' : '#1e1e1e')};
-  border: 1px solid #8e8e8e;
+  border-radius: 6px;
+  background: ${({ lightMode }) => (lightMode ? '#fffefe' : '#141321')};
+  border: ${({ lightMode }) => (lightMode ? '1px solid #b7b7b7' : '2px solid #b7b7b7')};
   font-size: 1.6rem;
   font-weight: 400;
 `

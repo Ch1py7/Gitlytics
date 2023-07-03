@@ -10,14 +10,10 @@ export const Search = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 1.4rem;
-  padding: 4px 1.2rem 4px 2rem;
-  gap: 2rem;
-  border-left: 1px #c8c8c8 solid;
   background-color: transparent;
   @media (max-width: 768px) {
     width: 70%;
-    padding: 1rem 2rem;
+    padding: 1rem 0;
     border: none;
     border-radius: 1rem;
     background: #2b2b2b;
@@ -27,7 +23,7 @@ export const Search = styled.div`
 export const SearchInput = styled.input<LightMode>`
   width: 100%;
   height: 100%;
-  padding: 0 2rem 0 2rem;
+  padding: 0 2rem;
   border: none;
   border-radius: 6px;
   background: ${({ lightMode }) => (lightMode ? '#efefef' : '#2b2b2b')};
@@ -39,15 +35,12 @@ export const SearchInput = styled.input<LightMode>`
 `
 
 export const SearchIcon = styled(Icon)`
-  position: relative;
+  position: absolute;
+  top: 50%;
+  right: 1.2rem;
   font-size: 2.4rem;
   color: #909090;
-  @media (max-width: 768px) {
-    position: absolute;
-    top: 50%;
-    right: 1.2rem;
-    transform: translateY(-50%);
-  }
+  transform: translateY(-50%);
 `
 
 export const SearchButton = styled.button<LightMode>`

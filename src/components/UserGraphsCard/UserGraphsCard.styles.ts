@@ -9,7 +9,7 @@ export const UserGraphsCard = styled.div<LightMode>`
   flex-direction: column;
   gap: 3rem;
   border-radius: 18px;
-  border: 8px solid #828282;
+  border: 4px solid #828282;
   background: ${({ lightMode }) => (lightMode ? '#eaeaea' : '#151515')};
   color: #efefef;
 `

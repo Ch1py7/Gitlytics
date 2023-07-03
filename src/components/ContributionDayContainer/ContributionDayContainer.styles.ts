@@ -14,9 +14,9 @@ export const ContributionDayContainer = styled.div<LightMode>`
   margin-top: 1rem;
   gap: 5px;
   padding: 0 2rem;
-  background: ${({ lightMode }) => (lightMode ? '#dfdfdf' : '#1e1e1e')};
-  border: 1px solid #8e8e8e;
-  border-radius: 1.8rem;
+  background: ${({ lightMode }) => (lightMode ? '#fffefe' : '#141321')};
+  border: ${({ lightMode }) => (lightMode ? '1px solid #b7b7b7' : '2px solid #b7b7b7')};
+  border-radius: 6px;
 `
 
 export const ContributionDay = styled.article`
@@ -28,7 +28,7 @@ export const ContributionDay = styled.article`
 `
 
 export const ContributionDayText = styled.p<LightMode>`
-  color: ${({ lightMode }) => (lightMode ? '#202020' : '#e9e9e9')};
+  color: ${({ lightMode }) => (lightMode ? '#202020' : '#a9fef7')};
   font-size: 1.6rem;
   font-weight: 600;
 `
