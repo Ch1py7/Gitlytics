@@ -1,145 +1,145 @@
 export interface Data {
-  user: User
+	user: User
 }
 
 interface User {
-  avatarUrl: string
-  login: string
-  bio: string
-  createdAt: string
-  contributionsCollection: ContributionsCollection
-  email: string
-  id: string
-  isBountyHunter: boolean
-  location: string
-  name: string
-  repositories: Repositories
-  socialAccounts: SocialAccounts
-  twitterUsername: string
-  url: string
-  websiteUrl: string
-  followers: Followers
+	avatarUrl: string
+	login: string
+	bio: string
+	createdAt: string
+	contributionsCollection: ContributionsCollection
+	email: string
+	id: string
+	isBountyHunter: boolean
+	location: string
+	name: string
+	repositories: Repositories
+	socialAccounts: SocialAccounts
+	twitterUsername: string
+	url: string
+	websiteUrl: string
+	followers: Followers
 }
 
 interface ContributionsCollection {
-  contributionCalendar: ContributionCalendar
-  contributionYears: number[]
-  firstIssueContribution: FirstIssueContribution
-  firstPullRequestContribution: FirstPullRequestContribution
-  firstRepositoryContribution: FirstRepositoryContribution
-  totalCommitContributions: number
+	contributionCalendar: ContributionCalendar
+	contributionYears: number[]
+	firstIssueContribution: FirstIssueContribution
+	firstPullRequestContribution: FirstPullRequestContribution
+	firstRepositoryContribution: FirstRepositoryContribution
+	totalCommitContributions: number
 }
 
 interface ContributionCalendar {
-  colors: string[]
-  isHalloween: boolean
-  months: Month[]
-  totalContributions: number
-  weeks: Week[]
+	colors: string[]
+	isHalloween: boolean
+	months: Month[]
+	totalContributions: number
+	weeks: Week[]
 }
 
 interface Followers {
-  totalCount: number
+	totalCount: number
 }
 
 interface Month {
-  firstDay: Date
-  name: string
-  totalWeeks: number
-  year: number
+	firstDay: Date
+	name: string
+	totalWeeks: number
+	year: number
 }
 
 interface Week {
-  contributionDays: ContributionDay[]
-  firstDay: Date
+	contributionDays: ContributionDay[]
+	firstDay: Date
 }
 
 interface ContributionDay {
-  color: string
-  contributionCount: number
-  contributionLevel: ContributionLevel
-  date: Date
-  weekday: number
+	color: string
+	contributionCount: number
+	contributionLevel: ContributionLevel
+	date: Date
+	weekday: number
 }
 
 export enum ContributionLevel {
-  FirstQuartile = 'FIRST_QUARTILE',
-  FourthQuartile = 'FOURTH_QUARTILE',
-  None = 'NONE',
-  SecondQuartile = 'SECOND_QUARTILE',
-  ThirdQuartile = 'THIRD_QUARTILE',
+	FirstQuartile = 'FIRST_QUARTILE',
+	FourthQuartile = 'FOURTH_QUARTILE',
+	None = 'NONE',
+	SecondQuartile = 'SECOND_QUARTILE',
+	ThirdQuartile = 'THIRD_QUARTILE',
 }
 
 interface FirstRepositoryContribution {
-  __typename: string
-  url: string
-  occurredAt: Date
-  repository: Repository
+	__typename: string
+	url: string
+	occurredAt: Date
+	repository: Repository
 }
 
 interface FirstPullRequestContribution {
-  __typename: string
-  url: string
-  occurredAt: Date
-  pullRequest: PullRequest
+	__typename: string
+	url: string
+	occurredAt: Date
+	pullRequest: PullRequest
 }
 
 interface FirstIssueContribution {
-  __typename: string
-  url: string
-  occurredAt: Date
-  issue: Issue
+	__typename: string
+	url: string
+	occurredAt: Date
+	issue: Issue
 }
 
 interface Repository {
-  url: string
+	url: string
 }
 
 interface PullRequest {
-  url: string
+	url: string
 }
 
 interface Issue {
-  url: string
+	url: string
 }
 
 interface Repositories {
-  nodes: NodeElement[]
+	nodes: NodeElement[]
 }
 
 interface NodeElement {
-  languages: Languages
-  name: string
-  url: string
-  description: string
-  stargazerCount: number
-  forkCount: number
+	languages: Languages
+	name: string
+	url: string
+	description: string
+	stargazerCount: number
+	forkCount: number
 }
 
 interface Languages {
-  edges: LanguagesEdge[]
+	edges: LanguagesEdge[]
 }
 
 interface LanguagesEdge {
-  node: PurpleNode
+	node: PurpleNode
 }
 
 interface PurpleNode {
-  color: string
-  id: string
-  name: string
+	color: string
+	id: string
+	name: string
 }
 
 interface SocialAccounts {
-  edges: SocialAccountsEdge[]
+	edges: SocialAccountsEdge[]
 }
 
 interface SocialAccountsEdge {
-  node: FluffyNode
+	node: FluffyNode
 }
 
 interface FluffyNode {
-  displayName: string
-  provider: string
-  url: string
+	displayName: string
+	provider: string
+	url: string
 }

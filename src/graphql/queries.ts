@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client'
 
 export namespace Queries {
-  export const getApiData = (username: string) => gql`
+	export const getApiData = (username: string) => gql`
     query GetApiData {
       user(login: "${username}") {
         id

@@ -5,7 +5,7 @@ import { client } from './graphql/client'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <ApolloProvider client={client}>
-    <App />
-  </ApolloProvider>
+	<ApolloProvider client={client}>
+		<App />
+	</ApolloProvider>
 )
