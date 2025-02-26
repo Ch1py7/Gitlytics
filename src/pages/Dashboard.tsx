@@ -52,6 +52,7 @@ export const Dashboard: React.FC = (): React.ReactNode => {
 							type='text'
 							placeholder='Enter GitHub username'
 							value={user}
+							required
 							onChange={(e) => setUser(e.target.value)}
 							className='w-full pl-10 pr-4 py-3 bg-gray-800 rounded-lg border border-gray-700 focus:outline-none focus:border-blue-500 transition'
 						/>
@@ -59,7 +60,7 @@ export const Dashboard: React.FC = (): React.ReactNode => {
 					<button
 						type='submit'
 						className='px-6 py-3 bg-blue-600 rounded-lg font-medium hover:bg-blue-700 transition flex items-center gap-2'
-						disabled={loading || user === ''}
+						disabled={loading}
 					>
 						{loading ? 'Analyzing...' : 'Analyze'}
 						{loading && <Activity className='animate-spin w-4 h-4' />}
