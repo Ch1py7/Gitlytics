@@ -59,7 +59,7 @@ export const Dashboard: React.FC = (): React.ReactNode => {
 					<button
 						type='submit'
 						className='px-6 py-3 bg-blue-600 rounded-lg font-medium hover:bg-blue-700 transition flex items-center gap-2'
-						disabled={loading}
+						disabled={loading || user === ''}
 					>
 						{loading ? 'Analyzing...' : 'Analyze'}
 						{loading && <Activity className='animate-spin w-4 h-4' />}
