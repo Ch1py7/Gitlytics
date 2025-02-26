@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes hamster {
+/* @keyframes hamster {
   from, to {
     transform: rotate(4deg) translate(-0.8em,1.85em);
   }
@@ -110,4 +110,4 @@
   to {
     transform: rotate(-1turn);
   }
-}
+} */

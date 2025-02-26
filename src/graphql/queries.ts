@@ -1,16 +1,21 @@
 import { gql } from '@apollo/client'
 
-export module Queries {
+export namespace Queries {
   export const getApiData = (username: string) => gql`
     query GetApiData {
       user(login: "${username}") {
         id
+        login
         avatarUrl(size: 500)
+        createdAt
         name
         url
         websiteUrl
         twitterUsername
         location
+        followers {
+          totalCount
+        }
         contributionsCollection {
           contributionYears
           firstIssueContribution {
@@ -73,6 +78,9 @@ export module Queries {
           nodes {
             name
             url
+            stargazerCount
+            forkCount
+            description
             languages(first: 10) {
               edges {
                 node {

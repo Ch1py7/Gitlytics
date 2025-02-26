@@ -1,9 +1,9 @@
 export const colors: { [key: string]: string } = {
-  '#ebedf0': '#1e252d',
-  '#216e39': '#22216e',
-  '#30a14e': '#3036a1',
-  '#40c463': '#4540c4',
-  '#9be9a8': '#9b9ce9',
+  '#ebedf0': '#051923',
+  '#216e39': '#003554',
+  '#30a14e': '#006494',
+  '#40c463': '#0582ca',
+  '#9be9a8': '#00a6fb',
 }
 
 export const lightColors: { [key: string]: string } = {

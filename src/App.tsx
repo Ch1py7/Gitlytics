@@ -1,29 +1,13 @@
-import { Footer } from 'components/Footer'
-import { GithubData } from 'components/GithubData'
-import { Header } from 'components/Header'
-import { Navbar } from 'components/Navbar'
-import { SearchUser } from 'components/SearchUser'
-import { LightModeContext } from 'context'
-import { FC, useState } from 'react'
+import { Header } from '@/components/Header'
+import { Footer } from './components/Footer'
+import { Dashboard } from './pages/Dashboard'
 
-export const App: FC = () => {
-  const [search, setSearch] = useState<string>('')
-  const [lightMode, setLightMode] = useState<boolean>(false)
-
-  return (
-    <LightModeContext.Provider value={{ lightMode, setLightMode }}>
-      <div
-        style={{
-          backgroundColor: `${lightMode ? '#fafafa' : '#1e1e1e'}`,
-          transition: 'all 0.2s ease-in-out',
-        }}
-      >
-        <Navbar setSearch={setSearch}/>
-        <Header />
-        <SearchUser setSearch={setSearch} />
-        {search ? <GithubData search={search} /> : null}
-        <Footer />
-      </div>
-    </LightModeContext.Provider>
-  )
+export const App: React.FC = (): React.ReactNode => {
+	return (
+		<div className='min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white'>
+			<Header />
+			<Dashboard />
+			<Footer />
+		</div>
+	)
 }

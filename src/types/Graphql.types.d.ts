@@ -1,14 +1,12 @@
-export interface RootObject {
-  data: Data
-}
-
 export interface Data {
   user: User
 }
 
-export interface User {
+interface User {
   avatarUrl: string
+  login: string
   bio: string
+  createdAt: string
   contributionsCollection: ContributionsCollection
   email: string
   id: string
@@ -20,18 +18,19 @@ export interface User {
   twitterUsername: string
   url: string
   websiteUrl: string
+  followers: Followers
 }
 
-export interface ContributionsCollection {
+interface ContributionsCollection {
   contributionCalendar: ContributionCalendar
   contributionYears: number[]
-  firstIssueContribution: firstIssueContribution
-  firstPullRequestContribution: firstPullRequestContribution
-  firstRepositoryContribution: firstRepositoryContribution
+  firstIssueContribution: FirstIssueContribution
+  firstPullRequestContribution: FirstPullRequestContribution
+  firstRepositoryContribution: FirstRepositoryContribution
   totalCommitContributions: number
 }
 
-export interface ContributionCalendar {
+interface ContributionCalendar {
   colors: string[]
   isHalloween: boolean
   months: Month[]
@@ -39,19 +38,23 @@ export interface ContributionCalendar {
   weeks: Week[]
 }
 
-export interface Month {
+interface Followers {
+  totalCount: number
+}
+
+interface Month {
   firstDay: Date
   name: string
   totalWeeks: number
   year: number
 }
 
-export interface Week {
+interface Week {
   contributionDays: ContributionDay[]
   firstDay: Date
 }
 
-export interface ContributionDay {
+interface ContributionDay {
   color: string
   contributionCount: number
   contributionLevel: ContributionLevel
@@ -67,72 +70,75 @@ export enum ContributionLevel {
   ThirdQuartile = 'THIRD_QUARTILE',
 }
 
-export interface firstRepositoryContribution {
+interface FirstRepositoryContribution {
   __typename: string
   url: string
   occurredAt: Date
   repository: Repository
 }
 
-export interface firstPullRequestContribution {
+interface FirstPullRequestContribution {
   __typename: string
   url: string
   occurredAt: Date
   pullRequest: PullRequest
 }
 
-export interface firstIssueContribution {
+interface FirstIssueContribution {
   __typename: string
   url: string
   occurredAt: Date
   issue: Issue
 }
 
-export interface Repository {
+interface Repository {
   url: string
 }
 
-export interface PullRequest {
+interface PullRequest {
   url: string
 }
 
-export interface Issue {
+interface Issue {
   url: string
 }
 
-export interface Repositories {
+interface Repositories {
   nodes: NodeElement[]
 }
 
-export interface NodeElement {
+interface NodeElement {
   languages: Languages
   name: string
   url: string
+  description: string
+  stargazerCount: number
+  forkCount: number
 }
 
-export interface Languages {
+interface Languages {
   edges: LanguagesEdge[]
 }
 
-export interface LanguagesEdge {
+interface LanguagesEdge {
   node: PurpleNode
 }
 
-export interface PurpleNode {
+interface PurpleNode {
   color: string
   id: string
   name: string
 }
 
-export interface SocialAccounts {
+interface SocialAccounts {
   edges: SocialAccountsEdge[]
 }
 
-export interface SocialAccountsEdge {
+interface SocialAccountsEdge {
   node: FluffyNode
 }
 
-export interface FluffyNode {
+interface FluffyNode {
   displayName: string
   provider: string
   url: string
