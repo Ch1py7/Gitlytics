@@ -11,6 +11,7 @@ import {
 	Twitch,
 	Twitter,
 	Users,
+	Youtube,
 } from 'lucide-react'
 
 const getMonth: Record<string, string> = {
@@ -106,6 +107,9 @@ export const UserCard: React.FC<Data> = ({ user }): React.ReactElement => {
 											)}
 											{social.node.provider === 'INSTAGRAM' && (
 												<Instagram className='w-5 h-5 text-white' />
+											)}
+											{social.node.provider === 'YOUTUBE' && (
+												<Youtube className='w-5 h-5 text-red-500' />
 											)}
 											{social.node.displayName}
 										</a>
