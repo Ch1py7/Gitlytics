@@ -74,7 +74,7 @@ export namespace Queries {
         bio
         email
         isBountyHunter
-        repositories(isFork: false, isLocked: false, first: 100) {
+        repositories(isFork: false, isLocked: false, first: 100, ownerAffiliations: OWNER) {
           nodes {
             name
             url
@@ -83,6 +83,7 @@ export namespace Queries {
             description
             languages(first: 10) {
               edges {
+              size
                 node {
                   color
                   id

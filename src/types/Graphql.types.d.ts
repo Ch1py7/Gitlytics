@@ -103,7 +103,7 @@ interface Issue {
 	url: string
 }
 
-interface Repositories {
+export interface Repositories {
 	nodes: NodeElement[]
 }
 
@@ -122,6 +122,7 @@ interface Languages {
 
 interface LanguagesEdge {
 	node: PurpleNode
+	size: number
 }
 
 interface PurpleNode {
