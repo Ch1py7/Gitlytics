@@ -14,3 +14,7 @@ body,
 	text-decoration: none;
 	font-family: "Satoshi", sans-serif;
 }
+
+.dailyContribution:hover {
+	background-color: #eaff00 !important;
+}

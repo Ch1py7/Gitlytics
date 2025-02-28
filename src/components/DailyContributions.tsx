@@ -9,7 +9,7 @@ export const DailyContributions: React.FC<Data> = ({ user }): React.ReactNode =>
 				<li className='flex flex-col gap-1' key={index}>
 					{week.contributionDays.map((day, index) => (
 						<article
-							className='transition rounded-sm w-[11px] h-[11px]'
+							className='transition-all duration-200 ease-in-out rounded-sm w-[11px] h-[11px] hover:scale-110 dailyContribution'
 							key={index}
 							title={`${day.date}\nContributions: ${day.contributionCount}`}
 							style={{ backgroundColor: colors[day.color] }}
