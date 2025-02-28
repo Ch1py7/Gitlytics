@@ -15,18 +15,18 @@ import {
 } from 'lucide-react'
 
 const getMonth: Record<string, string> = {
-	0: 'January',
-	1: 'February',
-	2: 'March',
-	3: 'April',
-	4: 'May',
-	5: 'June',
-	6: 'July',
-	7: 'August',
-	8: 'September',
-	9: 'October',
-	10: 'November',
-	11: 'December',
+	0: '01',
+	1: '02',
+	2: '03',
+	3: '04',
+	4: '05',
+	5: '06',
+	6: '07',
+	7: '08',
+	8: '09',
+	9: '10',
+	10: '11',
+	11: '12',
 }
 
 export const UserCard: React.FC<Data> = ({ user }): React.ReactElement => {
@@ -48,49 +48,64 @@ export const UserCard: React.FC<Data> = ({ user }): React.ReactElement => {
 						<h3 className='text-2xl font-bold overflow-hidden line-clamp-2 text-ellipsis whitespace-pre-wrap break-words'>
 							{user.name}
 						</h3>
-						<p className='text-gray-400'>@{user.login}</p>
+						<div className='flex gap-x-1 flex-row md:flex-col'>
+							<p className='text-gray-400'>@{user.login} </p>
+							{user.pronouns && <span className='text-gray-400'>· {user.pronouns}</span>}
+						</div>
 					</a>
 					<div className='flex flex-col items-end w-full justify-between'>
-						<p className='text-gray-300 mb-6 w-full'>{user.bio}</p>
+						<p className='text-gray-300 mb-6 w-full overflow-hidden line-clamp-5 text-ellipsis whitespace-pre-wrap break-words'>
+							{user.bio}
+						</p>
 						<div className='w-full'>
-							<div className='grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-2 mb-4 w-full'>
-								{user.location && (
-									<div className='flex items-center gap-2 text-gray-400'>
-										<MapPin className='w-5 h-5' />
-										<span>{user.location}</span>
-									</div>
-								)}
-								{user.websiteUrl && (
-									<div className='flex items-center gap-2 text-gray-400'>
-										<LinkIcon className='w-5 h-5' />
-										<a
-											href={user.websiteUrl}
-											target='_blank'
-											rel='noreferrer'
-											className='text-blue-400 hover:text-blue-300'
-										>
-											{user.websiteUrl}
-										</a>
-									</div>
-								)}
-								{user.email && (
-									<div className='flex items-center gap-2 text-gray-400'>
-										<Mail className='w-5 h-5' />
-										<a href={`mailto:${user.email}`} className='text-blue-400 hover:text-blue-300'>
-											{user.email}
-										</a>
-									</div>
-								)}
+							<div className='grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-4 mb-1 xxs:mb-1 w-full'>
+								<div className='flex items-center gap-2 text-gray-400'>
+									{user.websiteUrl && (
+										<>
+											<LinkIcon className='w-5 h-5' />
+											<a
+												href={user.websiteUrl}
+												target='_blank'
+												rel='noreferrer'
+												className='text-blue-400 hover:text-blue-300'
+											>
+												Website
+											</a>
+										</>
+									)}
+								</div>
+								<div className='flex items-center gap-2 text-gray-400'>
+									{user.email && (
+										<>
+											<Mail className='w-5 h-5' />
+											<a
+												href={`mailto:${user.email}`}
+												className='text-blue-400 hover:text-blue-300'
+											>
+												E-mail
+											</a>
+										</>
+									)}
+								</div>
+								<div className='flex items-center gap-2 text-gray-400'>
+									{user.location && (
+										<>
+											<MapPin className='w-5 h-5' />
+											<span>{user.location}</span>
+										</>
+									)}
+								</div>
 								<div className='flex items-center gap-2 text-gray-400'>
 									<Calendar className='w-5 h-5' />
 									<span>
-										Joined {getMonth[new Date(user.createdAt).getMonth()]}{' '}
+										Joined {getMonth[new Date(user.createdAt).getMonth()]}
+										{' / '}
 										{new Date(user.createdAt).getFullYear()}
 									</span>
 								</div>
 							</div>
-							<div className='flex flex-col gap-1'>
-								<div className='flex flex-col xs:flex-row justify-start md:justify-end gap-y-2 xxs:gap-y-0 xxxs:gap-x-4 mb-6'>
+							<div className='flex flex-col md:gap-1'>
+								<div className='flex flex-col xs:flex-row justify-start md:justify-end xxxs:gap-x-4 mb-1 xxs:mb-1'>
 									{user.socialAccounts.edges.map((social) => (
 										<a
 											key={social.node.provider}
@@ -118,7 +133,7 @@ export const UserCard: React.FC<Data> = ({ user }): React.ReactElement => {
 										</a>
 									))}
 								</div>
-								<div className='flex flex-col xs:flex-row justify-start md:justify-end gap-y-2 xxs:gap-y-0 xxxs:gap-x-4'>
+								<div className='flex flex-col xs:flex-row justify-start md:justify-end xxxs:gap-x-4'>
 									<div className='flex items-center gap-2'>
 										<Users className='w-5 h-5 text-blue-500' />
 										<span className='font-semibold'>
