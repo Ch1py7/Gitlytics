@@ -10,6 +10,7 @@ interface User {
 	contributionsCollection: ContributionsCollection
 	email: string
 	id: string
+	pronouns: string
 	isBountyHunter: boolean
 	location: string
 	name: string

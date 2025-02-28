@@ -10,6 +10,7 @@ export namespace Queries {
         createdAt
         name
         url
+        pronouns
         websiteUrl
         twitterUsername
         location
