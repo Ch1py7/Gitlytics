@@ -80,7 +80,7 @@ export const MostUsedTechs: React.FC<Repositories> = ({ nodes }): React.ReactEle
 				</div>
 				<h3 className='font-semibold'>Most Used Technologies</h3>
 			</div>
-			<div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+			<div className='grid grid-cols-1 md:grid-cols-2 gap-6 pb-3'>
 				<div className='relative flex items-center justify-center'>
 					<div className='w-64 h-64 rounded-full border-8 border-gray-700 flex items-center justify-center relative'>
 						<svg viewBox='0 0 100 100' className='absolute inset-0 w-full h-full'>

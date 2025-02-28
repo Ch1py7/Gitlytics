@@ -47,7 +47,10 @@ export const Dashboard: React.FC = (): React.ReactNode => {
 				<p className='text-gray-400 mb-8'>
 					Get detailed insights and statistics for any GitHub user or repository
 				</p>
-				<form onSubmit={userHandleSubmit} className='flex gap-2 max-w-md mx-auto'>
+				<form
+					onSubmit={userHandleSubmit}
+					className='flex flex-col xxs:flex-row gap-2 max-w-md mx-auto'
+				>
 					<div className='relative flex-1'>
 						<Search className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5' />
 						<input
@@ -61,7 +64,7 @@ export const Dashboard: React.FC = (): React.ReactNode => {
 					</div>
 					<button
 						type='submit'
-						className='px-6 py-3 bg-blue-600 rounded-lg font-medium hover:bg-blue-700 transition flex items-center gap-2'
+						className='px-6 py-3 bg-blue-600 rounded-lg font-medium hover:bg-blue-700 transition flex items-center gap-2 justify-center'
 						disabled={loading}
 					>
 						{loading ? 'Analyzing...' : 'Analyze'}
@@ -77,7 +80,7 @@ export const Dashboard: React.FC = (): React.ReactNode => {
 					{data.user.repositories.nodes.length > 0 && (
 						<MostUsedTechs nodes={data.user.repositories.nodes} />
 					)}
-					<div className='mx-auto mb-6 bg-gray-800 p-6 rounded-xl border border-gray-700'>
+					<div className='mx-auto mb-6 bg-gray-800 p-6 rounded-xl border border-gray-700 hidden md:block'>
 						<div className='flex items-center justify-between mb-6'>
 							<div className='flex items-center gap-4'>
 								<div className='p-3 bg-indigo-500/10 rounded-lg'>

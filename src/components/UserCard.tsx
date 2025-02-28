@@ -34,23 +34,23 @@ export const UserCard: React.FC<Data> = ({ user }): React.ReactElement => {
 		<div className='mx-auto mb-6'>
 			<div className='bg-gray-800 rounded-xl p-6 border border-gray-700'>
 				<div className='flex flex-col md:flex-row gap-8'>
-					<div className='flex flex-col items-center md:items-start max-w-32'>
+					<div className='flex flex-col items-center md:items-start mx-auto'>
 						<img
 							src={user.avatarUrl}
 							alt='Profile'
-							className='rounded-full mb-4 border-4 border-gray-700 aspect-square'
+							className='rounded-full mb-4 border-4 border-gray-700 aspect-square w-36 mx-auto'
 						/>
-						<h3 className='text-2xl font-bold mb-2 overflow-hidden line-clamp-2 text-ellipsis whitespace-pre-wrap break-words'>
+						<h3 className='text-2xl font-bold overflow-hidden line-clamp-2 text-ellipsis whitespace-pre-wrap break-words'>
 							{user.name}
 						</h3>
-						<a href={user.url} target='_blank' rel='noreferrer' className='text-gray-400 mb-4'>
+						<a href={user.url} target='_blank' rel='noreferrer' className='text-gray-400'>
 							@{user.login}
 						</a>
 					</div>
 					<div className='flex flex-col justify-between items-end w-full'>
 						<p className='text-gray-300 mb-6 w-full'>{user.bio}</p>
 						<div className='w-full'>
-							<div className='grid grid-cols-1 md:grid-cols-2 gap-2 mb-4 w-full'>
+							<div className='grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-2 mb-4 w-full'>
 								{user.location && (
 									<div className='flex items-center gap-2 text-gray-400'>
 										<MapPin className='w-5 h-5' />
@@ -87,7 +87,7 @@ export const UserCard: React.FC<Data> = ({ user }): React.ReactElement => {
 								</div>
 							</div>
 							<div className='flex flex-col gap-1'>
-								<div className='flex items-center text-gray-400 justify-end gap-5'>
+								<div className='flex flex-col xxs:flex-row flex-wrap justify-start gap-y-2 xxs:gap-y-0 xxxs:gap-x-4'>
 									{user.socialAccounts.edges.map((social) => (
 										<a
 											key={social.node.provider}
@@ -115,7 +115,7 @@ export const UserCard: React.FC<Data> = ({ user }): React.ReactElement => {
 										</a>
 									))}
 								</div>
-								<div className='flex flex-wrap gap-4 justify-end'>
+								<div className='flex flex-col xxs:flex-row flex-wrap justify-start gap-y-2 xxs:gap-y-0 xxxs:gap-x-4 mt-2 xxs:mt-0'>
 									<div className='flex items-center gap-2'>
 										<Users className='w-5 h-5 text-blue-500' />
 										<span className='font-semibold'>
