@@ -1,11 +1,14 @@
 import { RefreshCw, UserX } from 'lucide-react'
 
 interface UserNotFoundProps {
-  searchUser: string
-  setSearchUser: React.Dispatch<React.SetStateAction<string>>
+	searchUser: string
+	setSearchUser: React.Dispatch<React.SetStateAction<string>>
 }
 
-export const UserNotFound: React.FC<UserNotFoundProps> = ({ searchUser, setSearchUser }): React.ReactNode => {
+export const UserNotFound: React.FC<UserNotFoundProps> = ({
+	searchUser,
+	setSearchUser,
+}): React.ReactNode => {
 	return (
 		<div className='max-w-2xl mx-auto'>
 			<div className='bg-gray-800 rounded-xl p-8 border border-gray-700 text-center'>
