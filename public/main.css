@@ -16,5 +16,13 @@ body,
 }
 
 .dailyContribution:hover {
-	background-color: #eaff00 !important;
+	background-color: #9dff00 !important;
+}
+
+a:-webkit-any-link:focus-visible {
+	outline-offset: 1px;
+}
+
+a:focus-visible {
+	outline: -webkit-focus-ring-color auto 1px;
 }
