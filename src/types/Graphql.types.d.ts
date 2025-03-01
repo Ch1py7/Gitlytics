@@ -113,6 +113,7 @@ interface NodeElement {
 	name: string
 	url: string
 	description: string
+	homepageUrl: string
 	stargazerCount: number
 	forkCount: number
 }

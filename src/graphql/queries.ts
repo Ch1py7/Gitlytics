@@ -82,6 +82,7 @@ export namespace Queries {
             stargazerCount
             forkCount
             description
+            homepageUrl
             languages(first: 10) {
               edges {
               size
