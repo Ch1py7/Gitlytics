@@ -75,7 +75,7 @@ export namespace Queries {
         bio
         email
         isBountyHunter
-        repositories(isFork: false, isLocked: false, first: 100, ownerAffiliations: OWNER) {
+        repositories(isFork: false, isLocked: false, first: 100, ownerAffiliations: OWNER, orderBy: {field: STARGAZERS, direction: DESC}) {
           nodes {
             name
             url
