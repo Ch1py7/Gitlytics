@@ -100,13 +100,11 @@ export const Dashboard: React.FC = (): React.ReactNode => {
 						onChange={(e) => setTech(e.target.value)}
 						className='w-full pl-10 pr-4 py-3 bg-gray-800 rounded-lg border border-gray-700 focus:outline-none focus:border-blue-500 transition mb-6'
 					/>
-					{debouncedQuery !== '' && (
-						<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12'>
-							{filteredRepositories.map((repo) => (
-								<ProjectCard key={repo.url} {...repo} />
-							))}
-						</div>
-					)}
+					<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12'>
+						{filteredRepositories.map((repo) => (
+							<ProjectCard key={repo.url} {...repo} />
+						))}
+					</div>
 				</>
 			) : (
 				error && <UserNotFound searchUser={searchUser} setSearchUser={setSearchUser} />
