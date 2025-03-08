@@ -57,7 +57,6 @@ export const Gists: React.FC<GistsProps> = ({ gists, setShowAll, showAll }): Rea
 						className='block'
 					>
 						<div
-							key={node.id}
 							className='bg-gray-900/50 rounded-lg p-4 hover:bg-gray-900/70 transition group h-full flex flex-col justify-between'
 						>
 							<div className='flex items-start justify-between mb-2'>
