@@ -28,21 +28,21 @@ export const Gists: React.FC<GistsProps> = ({ gists, setShowAll, showAll }): Rea
 
 	return (
 		<div className='bg-gray-800 rounded-xl p-6 border border-gray-700 mb-8'>
-			<div className='flex items-center justify-between mb-6'>
+			<div className='flex items-center justify-between mb-6 flex-col xs:flex-row gap-4 xs:gap-0'>
 				<div className='flex items-center gap-4'>
 					<div className='p-3 bg-blue-500/10 rounded-lg'>
 						<FileCode className='w-6 h-6 text-blue-500' />
 					</div>
 					<h3 className='font-semibold'>Gists</h3>
 				</div>
-				<div className='relative'>
+				<div className='relative w-full xs:w-auto'>
 					<Search className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4' />
 					<input
 						type='text'
 						placeholder='Search gists...'
 						value={gistSearch}
 						onChange={(e) => setGistSearch(e.target.value)}
-						className='pl-9 pr-4 py-2 bg-gray-900/50 rounded-lg border border-gray-700 focus:outline-none focus:border-blue-500 transition text-sm w-64'
+						className='pl-9 pr-4 py-2 bg-gray-900/50 rounded-lg border border-gray-700 focus:outline-none focus:border-blue-500 transition text-sm w-full xs:w-72'
 					/>
 				</div>
 			</div>
