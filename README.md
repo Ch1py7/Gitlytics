@@ -8,11 +8,11 @@
 <div align="center">
     <a href="https://gitlytics-six.vercel.app/" target="_blank">Website</a>
     <span>&nbsp;❖&nbsp;</span>
-    <a href="https://github.com/Ch1py7/Gitlytics?tab=readme-ov-file#-structure">Structure</a>
+    <a href="https://github.com/Ch1py7/Gitlytics?tab=readme-ov-file#-project-structure">Structure</a>
     <span>&nbsp;❖&nbsp;</span>
     <a href="https://github.com/Ch1py7/Gitlytics?tab=readme-ov-file#-built-with">Built with</a>
     <span>&nbsp;❖&nbsp;</span>
-    <a href="https://github.com/Ch1py7/Gitlytics?tab=readme-ov-file#-contribute">Contribute</a>
+    <a href="https://github.com/Ch1py7/Gitlytics?tab=readme-ov-file#-contributing">Contribute</a>
     <br/>
     <a href="https://raw.githubusercontent.com/Ch1py7/Gitlytics/main/public/readme/gitlytics_mobile.webp" target="_blank">👉 Mobile 📸 </a>
 </div>
