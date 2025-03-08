@@ -20,6 +20,26 @@ interface User {
 	url: string
 	websiteUrl: string
 	followers: Followers
+	gists: GistsNode
+}
+
+export interface GistsNode {
+	edges: {
+		node: {
+			id: string
+			name: string
+			url: string
+			description: string
+			createdAt: string
+			comments: { totalCount: number }
+			files: {
+				name: string
+				language: {
+					name: string
+				}
+			}[]
+		}
+	}[]
 }
 
 interface ContributionsCollection {

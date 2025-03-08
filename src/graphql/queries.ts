@@ -75,7 +75,13 @@ export namespace Queries {
         bio
         email
         isBountyHunter
-        repositories(isFork: false, isLocked: false, first: 100, ownerAffiliations: OWNER, orderBy: {field: STARGAZERS, direction: DESC}) {
+        repositories(
+          isFork: false
+          isLocked: false
+          first: 100
+          ownerAffiliations: OWNER
+          orderBy: {field: STARGAZERS, direction: DESC}
+        ) {
           nodes {
             name
             url
@@ -85,7 +91,7 @@ export namespace Queries {
             homepageUrl
             languages(first: 10) {
               edges {
-              size
+                size
                 node {
                   color
                   id
@@ -101,6 +107,26 @@ export namespace Queries {
               displayName
               provider
               url
+            }
+          }
+        }
+        gists(first: 100, orderBy: {field: CREATED_AT, direction: DESC}) {
+          edges {
+            node {
+              id
+              name
+              url
+              description
+              createdAt
+              comments {
+                totalCount
+              }
+              files {
+                name
+                language {
+                  name
+                }
+              }
             }
           }
         }
