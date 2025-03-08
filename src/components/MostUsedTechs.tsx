@@ -1,73 +1,7 @@
 import type { NodeElement, Repositories } from '@/types'
+import { calculateLanguagePercentage, calculatePieSegments } from '@/utils'
 import { Code2, PieChart } from 'lucide-react'
 import { useState } from 'react'
-
-const calculateLanguagePercentage = (repositories: NodeElement[]) => {
-	const languageUsage: Record<string, { size: number; color: string }> = {}
-
-	repositories.forEach((repo) => {
-		repo.languages.edges.forEach((lang) => {
-			const { name, color } = lang.node
-			const size = lang.size
-
-			if (!languageUsage[name]) {
-				languageUsage[name] = { size: 0, color }
-			}
-
-			languageUsage[name].size += size
-		})
-	})
-
-	const totalSize = Object.values(languageUsage).reduce((sum, { size }) => sum + size, 0)
-
-	const languagePercentage = Object.entries(languageUsage)
-		.map(([name, data]) => ({
-			language: name,
-			percentage: Number(((data.size / totalSize) * 100).toFixed(2)),
-			color: data.color,
-		}))
-		.sort(
-			(a, b) =>
-				Number.parseFloat(b.percentage.toString()) - Number.parseFloat(a.percentage.toString())
-		)
-
-	return languagePercentage
-}
-
-const calculatePieSegments = (
-	technologies: {
-		language: string
-		percentage: number
-		color: string
-	}[]
-) => {
-	const total = technologies.reduce((sum, tech) => sum + tech.percentage, 0)
-	let cumulativeAngle = 0
-
-	return technologies.map((tech) => {
-		const angle = (tech.percentage / total) * 360
-
-		const startAngle = (cumulativeAngle * Math.PI) / 180
-		cumulativeAngle += angle
-		const endAngle = (cumulativeAngle * Math.PI) / 180
-
-		const radius = 50
-		const startX = 50 + radius * Math.sin(startAngle)
-		const startY = 50 - radius * Math.cos(startAngle)
-		const endX = 50 + radius * Math.sin(endAngle)
-		const endY = 50 - radius * Math.cos(endAngle)
-
-		const largeArcFlag = angle > 180 ? 1 : 0
-
-		const path = `M50,50 L${startX},${startY} A${radius},${radius} 0 ${largeArcFlag},1 ${endX},${endY} Z`
-
-		return {
-			...tech,
-			path,
-			angle,
-		}
-	})
-}
 
 export const MostUsedTechs: React.FC<Repositories> = ({ nodes }): React.ReactElement => {
 	const [techHover, setTechHover] = useState('')
