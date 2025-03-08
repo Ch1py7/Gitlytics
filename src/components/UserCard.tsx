@@ -64,6 +64,34 @@ export const UserCard: React.FC<Data> = ({ user }): React.ReactElement => {
 						</p>
 						<div className='w-full'>
 							<div className='flex flex-col xs:flex-row justify-start md:justify-end xxxs:gap-x-4 mb-2 md:m-0'>
+								{user.socialAccounts.edges.map((social) => (
+									<a
+										key={social.node.provider}
+										href={social.node.url}
+										target='_blank'
+										rel='noreferrer'
+										className='flex items-center gap-2'
+									>
+										{social.node.provider === 'LINKEDIN' && (
+											<Linkedin className='w-5 h-5 text-blue-500' />
+										)}
+										{social.node.provider === 'TWITTER' && (
+											<Twitter className='w-5 h-5 text-blue-500' />
+										)}
+										{social.node.provider === 'TWITCH' && (
+											<Twitch className='w-5 h-5 text-purple-500' />
+										)}
+										{social.node.provider === 'INSTAGRAM' && (
+											<Instagram className='w-5 h-5 text-white' />
+										)}
+										{social.node.provider === 'YOUTUBE' && (
+											<Youtube className='w-5 h-5 text-red-500' />
+										)}
+										<span className='md:hidden'>{social.node.provider.toLowerCase()}</span>
+									</a>
+								))}
+							</div>
+							<div className='flex flex-col xs:flex-row justify-start md:justify-end xxxs:gap-x-4 mb-2 md:m-0'>
 								{user.websiteUrl && (
 									<div className='flex items-center gap-2 text-gray-400'>
 										<LinkIcon className='w-5 h-5' />
@@ -102,34 +130,6 @@ export const UserCard: React.FC<Data> = ({ user }): React.ReactElement => {
 							</div>
 
 							<div className='flex flex-col'>
-								<div className='flex flex-col xs:flex-row justify-start md:justify-end xxxs:gap-x-4 mb-2 md:m-0'>
-									{user.socialAccounts.edges.map((social) => (
-										<a
-											key={social.node.provider}
-											href={social.node.url}
-											target='_blank'
-											rel='noreferrer'
-											className='flex items-center gap-2'
-										>
-											{social.node.provider === 'LINKEDIN' && (
-												<Linkedin className='w-5 h-5 text-blue-500' />
-											)}
-											{social.node.provider === 'TWITTER' && (
-												<Twitter className='w-5 h-5 text-blue-500' />
-											)}
-											{social.node.provider === 'TWITCH' && (
-												<Twitch className='w-5 h-5 text-purple-500' />
-											)}
-											{social.node.provider === 'INSTAGRAM' && (
-												<Instagram className='w-5 h-5 text-white' />
-											)}
-											{social.node.provider === 'YOUTUBE' && (
-												<Youtube className='w-5 h-5 text-red-500' />
-											)}
-											<span className='md:hidden'>{social.node.provider.toLowerCase()}</span>
-										</a>
-									))}
-								</div>
 								<div className='flex flex-col xs:flex-row justify-start md:justify-end xxxs:gap-x-4'>
 									<div className='flex items-center gap-2'>
 										<Users className='w-5 h-5 text-blue-500' />
