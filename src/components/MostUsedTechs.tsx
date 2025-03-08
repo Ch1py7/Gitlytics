@@ -1,5 +1,6 @@
 import type { NodeElement, Repositories } from '@/types'
 import { Code2, PieChart } from 'lucide-react'
+import { useState } from 'react'
 
 const calculateLanguagePercentage = (repositories: NodeElement[]) => {
 	const languageUsage: Record<string, { size: number; color: string }> = {}
@@ -69,6 +70,7 @@ const calculatePieSegments = (
 }
 
 export const MostUsedTechs: React.FC<Repositories> = ({ nodes }): React.ReactElement => {
+	const [techHover, setTechHover] = useState('')
 	const techs = calculateLanguagePercentage(nodes)
 	const chart = calculatePieSegments(techs)
 	const spare = 100 - techs.slice(0, 4).reduce((prev, curr) => prev + curr.percentage, 0)
@@ -84,10 +86,26 @@ export const MostUsedTechs: React.FC<Repositories> = ({ nodes }): React.ReactEle
 				<div className='relative flex items-center justify-center'>
 					<div className='w-64 h-64 rounded-full border-8 border-gray-700 flex items-center justify-center relative'>
 						<svg viewBox='0 0 100 100' className='absolute inset-0 w-full h-full'>
-							{techs.length > 4 && <circle cx='50' cy='50' r='49.9' fill='white' />}
-							<title>pie chart</title>
+							{techs.length > 4 && (
+								<circle
+									onMouseEnter={() => setTechHover('Others')}
+									onMouseLeave={() => setTechHover('')}
+									cx='50'
+									cy='50'
+									r='49.9'
+									fill='white'
+								/>
+							)}
+							<title>{techHover}</title>
 							{chart.slice(0, 4).map((tech) => (
-								<path d={tech.path} fill={tech.color} key={tech.language} />
+								<path
+									d={tech.path}
+									fill={tech.color}
+									key={tech.language}
+									className='hover:brightness-110'
+									onMouseEnter={() => setTechHover(tech.language)}
+									onMouseLeave={() => setTechHover('')}
+								/>
 							))}
 							<circle cx='50' cy='50' r='30' fill='#1F2937' />
 						</svg>
