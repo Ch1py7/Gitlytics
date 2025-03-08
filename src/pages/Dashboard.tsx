@@ -1,4 +1,5 @@
 import { DailyContributions } from '@/components/DailyContributions'
+import { Gists } from '@/components/Gists'
 import { MostUsedTechs } from '@/components/MostUsedTechs'
 import { ProjectCard } from '@/components/ProjectCard'
 import { Skeleton } from '@/components/Skeleton'
@@ -16,6 +17,7 @@ export const Dashboard: React.FC = (): React.ReactNode => {
 	const [tech, setTech] = useState('')
 	const [debouncedQuery, setDebouncedQuery] = useState<string>('ch1py7')
 	const { data, loading, error } = useGithubQuery<Data>(Queries.getApiData(searchUser))
+	const [showAllGists, setShowAllGists] = useState(false)
 
 	const userHandleSubmit = (e: React.FormEvent) => {
 		e.preventDefault()
@@ -79,6 +81,13 @@ export const Dashboard: React.FC = (): React.ReactNode => {
 					<UserCard user={data.user} />
 					{data.user.repositories.nodes.length > 0 && (
 						<MostUsedTechs nodes={data.user.repositories.nodes} />
+					)}
+					{data.user.gists.edges.length > 0 && (
+						<Gists
+							gists={data.user.gists.edges}
+							setShowAll={setShowAllGists}
+							showAll={showAllGists}
+						/>
 					)}
 					<div className='mx-auto mb-6 bg-gray-800 p-6 rounded-xl border border-gray-700 hidden md:block'>
 						<div className='flex items-center justify-between mb-6'>
