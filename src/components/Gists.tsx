@@ -20,8 +20,8 @@ export const Gists: React.FC<GistsProps> = ({ gists, setShowAll, showAll }): Rea
 	const filteredGists = useMemo(() => {
 		return memoizedGists.filter(
 			({ node }) =>
-				node.files[0].name.toLocaleLowerCase().includes(gistSearch.toLowerCase()) ||
-				node.description.toLocaleLowerCase().includes(gistSearch.toLowerCase()) ||
+				node.files[0].name.toLowerCase().includes(gistSearch.toLowerCase()) ||
+				node.description.toLowerCase().includes(gistSearch.toLowerCase()) ||
 				uniqueLanguages(node.files).some((l) => l.toLowerCase().includes(gistSearch.toLowerCase()))
 		)
 	}, [gistSearch, memoizedGists])
