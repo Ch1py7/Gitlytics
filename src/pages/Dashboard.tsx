@@ -67,6 +67,18 @@ export const Dashboard: React.FC = (): React.ReactNode => {
 					{data.user.repositories.nodes.length > 0 && (
 						<MostUsedTechs nodes={data.user.repositories.nodes} />
 					)}
+					{data.user.gists.edges.length > 0 && (
+						<Gists
+							gists={data.user.gists.edges}
+							setShowAll={setShowAllGists}
+							showAll={showAllGists}
+						/>
+					)}
+					<Projects
+						projects={data.user.repositories.nodes}
+						showAll={showAllProjects}
+						setShowAll={setShowAllProjects}
+					/>
 					<div className='mx-auto mb-6 bg-gray-800 p-6 rounded-xl border border-gray-700 hidden md:block'>
 						<div className='flex items-center justify-between mb-6'>
 							<div className='flex items-center gap-4'>
@@ -80,18 +92,6 @@ export const Dashboard: React.FC = (): React.ReactNode => {
 							{data && <DailyContributions user={data.user} />}
 						</div>
 					</div>
-					{data.user.gists.edges.length > 0 && (
-						<Gists
-							gists={data.user.gists.edges}
-							setShowAll={setShowAllGists}
-							showAll={showAllGists}
-						/>
-					)}
-					<Projects
-						projects={data.user.repositories.nodes}
-						showAll={showAllProjects}
-						setShowAll={setShowAllProjects}
-					/>
 				</>
 			) : (
 				error && <UserNotFound searchUser={searchUser} setSearchUser={setSearchUser} />
