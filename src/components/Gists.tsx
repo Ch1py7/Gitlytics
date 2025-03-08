@@ -33,7 +33,7 @@ export const Gists: React.FC<GistsProps> = ({ gists, setShowAll, showAll }): Rea
 					<div className='p-3 bg-blue-500/10 rounded-lg'>
 						<FileCode className='w-6 h-6 text-blue-500' />
 					</div>
-					<h3 className='font-semibold'>Recent Gists</h3>
+					<h3 className='font-semibold'>Gists</h3>
 				</div>
 				<div className='relative'>
 					<Search className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4' />
