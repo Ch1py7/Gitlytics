@@ -1,7 +1,7 @@
 import { DailyContributions } from '@/components/DailyContributions'
 import { Gists } from '@/components/Gists'
 import { MostUsedTechs } from '@/components/MostUsedTechs'
-import { ProjectCard } from '@/components/ProjectCard'
+import { Projects } from '@/components/Projects'
 import { Skeleton } from '@/components/Skeleton'
 import { UserCard } from '@/components/UserCard'
 import { UserNotFound } from '@/components/UserNotFound'
@@ -9,38 +9,23 @@ import { Queries } from '@/graphql/queries'
 import { useGithubQuery } from '@/hooks'
 import type { Data } from '@/types'
 import { Activity, BarChart3, Search } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 export const Dashboard: React.FC = (): React.ReactNode => {
 	const [user, setUser] = useState('')
 	const [searchUser, setSearchUser] = useState<string>('ch1py7')
 	const [tech, setTech] = useState('')
-	const [debouncedQuery, setDebouncedQuery] = useState<string>('ch1py7')
 	const { data, loading, error } = useGithubQuery<Data>(Queries.getApiData(searchUser))
 	const [showAllGists, setShowAllGists] = useState(false)
+	const [showAllProjects, setShowAllProjects] = useState(false)
 
 	const userHandleSubmit = (e: React.FormEvent) => {
 		e.preventDefault()
 		setTech('')
+		setShowAllGists(false)
+		setShowAllProjects(false)
 		setSearchUser(user)
 	}
-
-	const filteredRepositories =
-		data?.user.repositories.nodes.filter((repo) =>
-			repo.languages.edges.some((lang) =>
-				lang.node.name.toLowerCase().includes(debouncedQuery.toLowerCase())
-			)
-		) ?? []
-
-	useEffect(() => {
-		const handler = setTimeout(() => {
-			setDebouncedQuery(tech)
-		}, 500)
-
-		return () => {
-			clearTimeout(handler)
-		}
-	}, [tech])
 
 	return (
 		<main className='container mx-auto px-4 py-12 max-w-4xl'>
@@ -82,13 +67,6 @@ export const Dashboard: React.FC = (): React.ReactNode => {
 					{data.user.repositories.nodes.length > 0 && (
 						<MostUsedTechs nodes={data.user.repositories.nodes} />
 					)}
-					{data.user.gists.edges.length > 0 && (
-						<Gists
-							gists={data.user.gists.edges}
-							setShowAll={setShowAllGists}
-							showAll={showAllGists}
-						/>
-					)}
 					<div className='mx-auto mb-6 bg-gray-800 p-6 rounded-xl border border-gray-700 hidden md:block'>
 						<div className='flex items-center justify-between mb-6'>
 							<div className='flex items-center gap-4'>
@@ -102,18 +80,18 @@ export const Dashboard: React.FC = (): React.ReactNode => {
 							{data && <DailyContributions user={data.user} />}
 						</div>
 					</div>
-					<input
-						type='text'
-						placeholder='Search by language'
-						value={tech}
-						onChange={(e) => setTech(e.target.value)}
-						className='w-full pl-10 pr-4 py-3 bg-gray-800 rounded-lg border border-gray-700 focus:outline-none focus:border-blue-500 transition mb-6'
+					{data.user.gists.edges.length > 0 && (
+						<Gists
+							gists={data.user.gists.edges}
+							setShowAll={setShowAllGists}
+							showAll={showAllGists}
+						/>
+					)}
+					<Projects
+						projects={data.user.repositories.nodes}
+						showAll={showAllProjects}
+						setShowAll={setShowAllProjects}
 					/>
-					<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12'>
-						{filteredRepositories.map((repo) => (
-							<ProjectCard key={repo.url} {...repo} />
-						))}
-					</div>
 				</>
 			) : (
 				error && <UserNotFound searchUser={searchUser} setSearchUser={setSearchUser} />

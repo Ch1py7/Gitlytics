@@ -1,12 +1,9 @@
 import type { NodeElement } from '@/types'
-import { GitFork, Star } from 'lucide-react'
+import { ExternalLink, GitFork, Star } from 'lucide-react'
 
 export const ProjectCard: React.FC<NodeElement> = (project): React.ReactNode => {
 	return (
-		<div
-			key={project.name}
-			className='bg-gray-800 rounded-xl overflow-hidden border border-gray-700 transition hover:border-gray-600 p-5 flex flex-col gap-2'
-		>
+		<div className='bg-gray-900/50 rounded-lg hover:bg-gray-900/70 transition overflow-hidden p-5 flex flex-col gap-2'>
 			<div className='flex items-center justify-between'>
 				<h3 className='text-xl font-semibold'>{project.name}</h3>
 			</div>

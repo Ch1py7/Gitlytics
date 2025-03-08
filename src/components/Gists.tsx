@@ -21,7 +21,7 @@ export const Gists: React.FC<GistsProps> = ({ gists, setShowAll, showAll }): Rea
 		return memoizedGists.filter(
 			({ node }) =>
 				node.files[0].name.toLowerCase().includes(gistSearch.toLowerCase()) ||
-				node.description.toLowerCase().includes(gistSearch.toLowerCase()) ||
+				node.description?.toLowerCase().includes(gistSearch.toLowerCase()) ||
 				uniqueLanguages(node.files).some((l) => l.toLowerCase().includes(gistSearch.toLowerCase()))
 		)
 	}, [gistSearch, memoizedGists])
@@ -56,9 +56,7 @@ export const Gists: React.FC<GistsProps> = ({ gists, setShowAll, showAll }): Rea
 						rel='noopener noreferrer'
 						className='block'
 					>
-						<div
-							className='bg-gray-900/50 rounded-lg p-4 hover:bg-gray-900/70 transition group h-full flex flex-col justify-between'
-						>
+						<div className='bg-gray-900/50 rounded-lg p-4 hover:bg-gray-900/70 transition group h-full flex flex-col justify-between'>
 							<div className='flex items-start justify-between mb-2'>
 								<div>
 									<div className='flex items-center gap-2 mb-1'>
