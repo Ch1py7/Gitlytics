@@ -64,7 +64,7 @@ interface Followers {
 }
 
 interface Month {
-	firstDay: Date
+	firstDay: string
 	name: string
 	totalWeeks: number
 	year: number
@@ -72,14 +72,14 @@ interface Month {
 
 interface Week {
 	contributionDays: ContributionDay[]
-	firstDay: Date
+	firstDay: string
 }
 
 interface ContributionDay {
 	color: string
 	contributionCount: number
 	contributionLevel: ContributionLevel
-	date: Date
+	date: string
 	weekday: number
 }
 
@@ -94,21 +94,21 @@ export enum ContributionLevel {
 interface FirstRepositoryContribution {
 	__typename: string
 	url: string
-	occurredAt: Date
+	occurredAt: string
 	repository: Repository
 }
 
 interface FirstPullRequestContribution {
 	__typename: string
 	url: string
-	occurredAt: Date
+	occurredAt: string
 	pullRequest: PullRequest
 }
 
 interface FirstIssueContribution {
 	__typename: string
 	url: string
-	occurredAt: Date
+	occurredAt: string
 	issue: Issue
 }
 
